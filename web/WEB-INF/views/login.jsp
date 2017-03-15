@@ -63,7 +63,7 @@
 
                 </form:form>
 
-                <button onclick="window.location.href = '/SpringMVCHibernateSession/reg_page'" class="btn btn-info btn-block">Register</button>
+                <button onclick="window.location.href = '/NawalokaHospital/reg_page'" class="btn btn-info btn-block">Register</button>
 
             </div>
         </div>
