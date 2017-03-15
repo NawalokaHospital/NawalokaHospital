@@ -279,20 +279,16 @@
                                 <div class="col-xs-12 col-md-4" style="float: left;text-align: center">
                                     <h2>Search Patient</h2>
                                     <label>Patient Id:</label>
-                                    <input type="text" value="" id="patientname" class="input"/><br><br>  
-                                    <input type="button" value="jk" onclick="loadLoginValidation();"/>
+                                    <p>Patient-ID:<input type="text" onkeyup="loadpatient();" id="keyval" /></p>                                      
                                     <table>
                                         <tr>
                                             <th>Patient No</th>
                                             <th>Patient Name</th>
                                             <th>patientAge</th>                                            
                                         </tr>
-                                        <%--<c:forEach var="Labassistants" items="${laball}">--%>
-                                        <!--<tr>-->
-                                            <!--<td>${Labassistants.labassistantId}</td>-->
-                                            <!--<td>${Labassistants.labassistantFirstname}</td>-->
-                                        <!--</tr>-->
-                                        <%--</c:forEach>--%>
+                                        <tbody id="tdatapatient">
+
+                                        </tbody>
                                     </table>
 
                                 </div>
@@ -344,28 +340,41 @@
                 </section>
             </section>
         </div>
-    </body>
-    <script>
-        function loadLoginValidation() {
-            var kk = 3;
-            alert("hjhj");
-            var rootURL = '';
-            $.ajax({
-                type: 'POST',
-                url: rootURL,
-//                data: 1,
-                contentType: 'application/json',
-                success: function (data, textStatus, jqXHR) {
-                    alert("ssss");
-                    alert(data);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert("kjkjk");
+        <script>
+            function loadpatient() {
+                var val = $('#keyval').val();
+                if (val !== '') {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/NawalokaHospital/user/' + val,
+//                    data: kk,
+                        contentType: 'application/json',
+                        success: function (data, textStatus, jqXHR) {
+                            console.log(data);
+                            console.log(data.length);
+                            $('#tdatapatient').html("");
+                            if (data.length !== 0) {
+                                $.each(data, function (index, patient) {
+                                    $('#tdatapatient').html("<tr> ");
+                                    $('#tdatapatient').append("<th>" + patient.patientId + "</th>");
+                                    $('#tdatapatient').append("<th>" + patient.patientFirstname + "</th>");
+                                    $('#tdatapatient').append("<th>" + patient.patientAge + "</th>");
+                                    $('#tdatapatient').append("</tr>");
+                                });
+                            } else {
+                                $('#tdatapatient').html("<tr>");
+                                $('#tdatapatient').append("<th colspan='3' style='color:red;text-align:center'>No Existing patient</th>");
+                                $('#tdatapatient').append("</tr>");
+                            }
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                        }
+                    });
+                } else {
+                    $('#tdatapatient').html("");
                 }
-            });
-        }
-    </script>
-</html>
+            }
+        </script>
 
 
 
@@ -373,395 +382,253 @@
 
 
 
+        <!-- END CONTENT -->
+        <div class="page-chatapi hideit">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</section>
-</section>
-<!-- END CONTENT -->
-<div class="page-chatapi hideit">
-
-    <div class="search-bar">
-        <input type="text" placeholder="Search" class="form-control">
-    </div>
-
-    <div class="chat-wrapper">
-        <h4 class="group-head">Groups</h4>
-        <ul class="group-list list-unstyled">
-            <li class="group-row">
-                <div class="group-status available">
-                    <i class="fa fa-circle"></i>
-                </div>
-                <div class="group-info">
-                    <h4><a href="#">Work</a></h4>
-                </div>
-            </li>
-            <li class="group-row">
-                <div class="group-status away">
-                    <i class="fa fa-circle"></i>
-                </div>
-                <div class="group-info">
-                    <h4><a href="#">Friends</a></h4>
-                </div>
-            </li>
-
-        </ul>
-
-
-        <h4 class="group-head">Favourites</h4>
-        <ul class="contact-list">
-
-            <li class="user-row" id='chat_user_1' data-user-id='1'>
-                <div class="user-img">
-                    <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
-                </div>
-                <div class="user-info">
-                    <h4><a href="#">Clarine Vassar</a></h4>
-                    <span class="status available" data-status="available"> Available</span>
-                </div>
-                <div class="user-status available">
-                    <i class="fa fa-circle"></i>
-                </div>
-            </li>
-            <li class="user-row" id='chat_user_2' data-user-id='2'>
-                <div class="user-img">
-                    <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
-                </div>
-                <div class="user-info">
-                    <h4><a href="#">Brooks Latshaw</a></h4>
-                    <span class="status away" data-status="away"> Away</span>
-                </div>
-                <div class="user-status away">
-                    <i class="fa fa-circle"></i>
-                </div>
-            </li>
-            <li class="user-row" id='chat_user_3' data-user-id='3'>
-                <div class="user-img">
-                    <a href="#"><img src="data/profile/avatar-3.png" alt=""></a>
-                </div>
-                <div class="user-info">
-                    <h4><a href="#">Clementina Brodeur</a></h4>
-                    <span class="status busy" data-status="busy"> Busy</span>
-                </div>
-                <div class="user-status busy">
-                    <i class="fa fa-circle"></i>
-                </div>
-            </li>
-
-        </ul>
-
-
-        <h4 class="group-head">More Contacts</h4>
-        <ul class="contact-list">
-
-            <li class="user-row" id='chat_user_4' data-user-id='4'>
-                <div class="user-img">
-                    <a href="#"><img src="data/profile/avatar-4.png" alt=""></a>
-                </div>
-                <div class="user-info">
-                    <h4><a href="#">Carri Busey</a></h4>
-                    <span class="status offline" data-status="offline"> Offline</span>
-                </div>
-                <div class="user-status offline">
-                    <i class="fa fa-circle"></i>
-                </div>
-            </li>
-            <li class="user-row" id='chat_user_5' data-user-id='5'>
-                <div class="user-img">
-                    <a href="#"><img src="data/profile/avatar-5.png" alt=""></a>
-                </div>
-                <div class="user-info">
-                    <h4><a href="#">Melissa Dock</a></h4>
-                    <span class="status offline" data-status="offline"> Offline</span>
-                </div>
-                <div class="user-status offline">
-                    <i class="fa fa-circle"></i>
-                </div>
-            </li>
-            <li class="user-row" id='chat_user_6' data-user-id='6'>
-                <div class="user-img">
-                    <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
-                </div>
-                <div class="user-info">
-                    <h4><a href="#">Verdell Rea</a></h4>
-                    <span class="status available" data-status="available"> Available</span>
-                </div>
-                <div class="user-status available">
-                    <i class="fa fa-circle"></i>
-                </div>
-            </li>
-            <li class="user-row" id='chat_user_7' data-user-id='7'>
-                <div class="user-img">
-                    <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
-                </div>
-                <div class="user-info">
-                    <h4><a href="#">Linette Lheureux</a></h4>
-                    <span class="status busy" data-status="busy"> Busy</span>
-                </div>
-                <div class="user-status busy">
-                    <i class="fa fa-circle"></i>
-                </div>
-            </li>
-            <li class="user-row" id='chat_user_8' data-user-id='8'>
-                <div class="user-img">
-                    <a href="#"><img src="data/profile/avatar-3.png" alt=""></a>
-                </div>
-                <div class="user-info">
-                    <h4><a href="#">Araceli Boatright</a></h4>
-                    <span class="status away" data-status="away"> Away</span>
-                </div>
-                <div class="user-status away">
-                    <i class="fa fa-circle"></i>
-                </div>
-            </li>
-            <li class="user-row" id='chat_user_9' data-user-id='9'>
-                <div class="user-img">
-                    <a href="#"><img src="data/profile/avatar-4.png" alt=""></a>
-                </div>
-                <div class="user-info">
-                    <h4><a href="#">Clay Peskin</a></h4>
-                    <span class="status busy" data-status="busy"> Busy</span>
-                </div>
-                <div class="user-status busy">
-                    <i class="fa fa-circle"></i>
-                </div>
-            </li>
-            <li class="user-row" id='chat_user_10' data-user-id='10'>
-                <div class="user-img">
-                    <a href="#"><img src="data/profile/avatar-5.png" alt=""></a>
-                </div>
-                <div class="user-info">
-                    <h4><a href="#">Loni Tindall</a></h4>
-                    <span class="status away" data-status="away"> Away</span>
-                </div>
-                <div class="user-status away">
-                    <i class="fa fa-circle"></i>
-                </div>
-            </li>
-            <li class="user-row" id='chat_user_11' data-user-id='11'>
-                <div class="user-img">
-                    <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
-                </div>
-                <div class="user-info">
-                    <h4><a href="#">Tanisha Kimbro</a></h4>
-                    <span class="status idle" data-status="idle"> Idle</span>
-                </div>
-                <div class="user-status idle">
-                    <i class="fa fa-circle"></i>
-                </div>
-            </li>
-            <li class="user-row" id='chat_user_12' data-user-id='12'>
-                <div class="user-img">
-                    <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
-                </div>
-                <div class="user-info">
-                    <h4><a href="#">Jovita Tisdale</a></h4>
-                    <span class="status idle" data-status="idle"> Idle</span>
-                </div>
-                <div class="user-status idle">
-                    <i class="fa fa-circle"></i>
-                </div>
-            </li>
-
-        </ul>
-    </div>
-
-</div>
-
-
-<div class="chatapi-windows ">
-
-
-</div>    </div>
-<!-- END CONTAINER -->
-<!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
-
-
-<!-- CORE JS FRAMEWORK - START --> 
-<script src="<c:url value="/assets/mod4/js/jquery-1.11.2.min.js"/>" type="text/javascript"></script> 
-<script src="<c:url value="/assets/mod4/js/jquery.easing.min.js"/>" type="text/javascript"></script> 
-<script src="<c:url value="/assets/mod4/js/bootstrap.min.js"/>" type="text/javascript"></script> 
-<script src="<c:url value="/assets/mod4/js/pace.min.js"/>" type="text/javascript"></script>  
-<script src="<c:url value="/assets/mod4/js/perfect-scrollbar.min.js"/>" type="text/javascript"></script> 
-<script src="<c:url value="/assets/mod4/js/viewportchecker.js"/>" type="text/javascript"></script>  
-<!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
-<script src="<c:url value="/assets/mod4/js/icheck.min.js"/>" type="text/javascript"></script><!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
-<!-- CORE TEMPLATE JS - START --> 
-<script src="<c:url value="/assets/mod4/js/scripts.js"/>" type="text/javascript"></script>  
-<!-- Sidebar Graph - START --> 
-<script src="<c:url value="/assets/mod4/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
-<script src="<c:url value="/assets/mod4/js/chart-sparkline.js"/>" type="text/javascript"></script>
-
-<script src="<c:url value="/assets/mod4/js/autosize.min.js"/>" type="text/javascript"></script>
-<script src="<c:url value="/assets/mod4/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
-
-
-
-
-
-
-
-
-
-<!-- General section box modal start -->
-<div class="modal" id="section-settings" tabindex="-1" role="dialog" aria-labelledby="ultraModal-Label" aria-hidden="true">
-    <div class="modal-dialog animated bounceInDown">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Section Settings</h4>
+            <div class="search-bar">
+                <input type="text" placeholder="Search" class="form-control">
             </div>
-            <div class="modal-body">
 
-                Body goes here...
+            <div class="chat-wrapper">
+                <h4 class="group-head">Groups</h4>
+                <ul class="group-list list-unstyled">
+                    <li class="group-row">
+                        <div class="group-status available">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="group-info">
+                            <h4><a href="#">Work</a></h4>
+                        </div>
+                    </li>
+                    <li class="group-row">
+                        <div class="group-status away">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                        <div class="group-info">
+                            <h4><a href="#">Friends</a></h4>
+                        </div>
+                    </li>
 
+                </ul>
+
+
+                <h4 class="group-head">Favourites</h4>
+                <ul class="contact-list">
+
+                    <li class="user-row" id='chat_user_1' data-user-id='1'>
+                        <div class="user-img">
+                            <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Clarine Vassar</a></h4>
+                            <span class="status available" data-status="available"> Available</span>
+                        </div>
+                        <div class="user-status available">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row" id='chat_user_2' data-user-id='2'>
+                        <div class="user-img">
+                            <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Brooks Latshaw</a></h4>
+                            <span class="status away" data-status="away"> Away</span>
+                        </div>
+                        <div class="user-status away">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row" id='chat_user_3' data-user-id='3'>
+                        <div class="user-img">
+                            <a href="#"><img src="data/profile/avatar-3.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Clementina Brodeur</a></h4>
+                            <span class="status busy" data-status="busy"> Busy</span>
+                        </div>
+                        <div class="user-status busy">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+
+                </ul>
+
+
+                <h4 class="group-head">More Contacts</h4>
+                <ul class="contact-list">
+
+                    <li class="user-row" id='chat_user_4' data-user-id='4'>
+                        <div class="user-img">
+                            <a href="#"><img src="data/profile/avatar-4.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Carri Busey</a></h4>
+                            <span class="status offline" data-status="offline"> Offline</span>
+                        </div>
+                        <div class="user-status offline">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row" id='chat_user_5' data-user-id='5'>
+                        <div class="user-img">
+                            <a href="#"><img src="data/profile/avatar-5.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Melissa Dock</a></h4>
+                            <span class="status offline" data-status="offline"> Offline</span>
+                        </div>
+                        <div class="user-status offline">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row" id='chat_user_6' data-user-id='6'>
+                        <div class="user-img">
+                            <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Verdell Rea</a></h4>
+                            <span class="status available" data-status="available"> Available</span>
+                        </div>
+                        <div class="user-status available">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row" id='chat_user_7' data-user-id='7'>
+                        <div class="user-img">
+                            <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Linette Lheureux</a></h4>
+                            <span class="status busy" data-status="busy"> Busy</span>
+                        </div>
+                        <div class="user-status busy">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row" id='chat_user_8' data-user-id='8'>
+                        <div class="user-img">
+                            <a href="#"><img src="data/profile/avatar-3.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Araceli Boatright</a></h4>
+                            <span class="status away" data-status="away"> Away</span>
+                        </div>
+                        <div class="user-status away">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row" id='chat_user_9' data-user-id='9'>
+                        <div class="user-img">
+                            <a href="#"><img src="data/profile/avatar-4.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Clay Peskin</a></h4>
+                            <span class="status busy" data-status="busy"> Busy</span>
+                        </div>
+                        <div class="user-status busy">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row" id='chat_user_10' data-user-id='10'>
+                        <div class="user-img">
+                            <a href="#"><img src="data/profile/avatar-5.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Loni Tindall</a></h4>
+                            <span class="status away" data-status="away"> Away</span>
+                        </div>
+                        <div class="user-status away">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row" id='chat_user_11' data-user-id='11'>
+                        <div class="user-img">
+                            <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Tanisha Kimbro</a></h4>
+                            <span class="status idle" data-status="idle"> Idle</span>
+                        </div>
+                        <div class="user-status idle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+                    <li class="user-row" id='chat_user_12' data-user-id='12'>
+                        <div class="user-img">
+                            <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
+                        </div>
+                        <div class="user-info">
+                            <h4><a href="#">Jovita Tisdale</a></h4>
+                            <span class="status idle" data-status="idle"> Idle</span>
+                        </div>
+                        <div class="user-status idle">
+                            <i class="fa fa-circle"></i>
+                        </div>
+                    </li>
+
+                </ul>
             </div>
-            <div class="modal-footer">
-                <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-                <button class="btn btn-success" type="button">Save changes</button>
+
+        </div>
+
+
+        <div class="chatapi-windows ">
+
+
+        </div>    
+        <!-- END CONTAINER -->
+        <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
+
+
+        <!-- CORE JS FRAMEWORK - START --> 
+        <script src="<c:url value="/assets/mod4/js/jquery-1.11.2.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="/assets/mod4/js/jquery.easing.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="/assets/mod4/js/bootstrap.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="/assets/mod4/js/pace.min.js"/>" type="text/javascript"></script>  
+        <script src="<c:url value="/assets/mod4/js/perfect-scrollbar.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="/assets/mod4/js/viewportchecker.js"/>" type="text/javascript"></script>  
+        <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
+        <script src="<c:url value="/assets/mod4/js/icheck.min.js"/>" type="text/javascript"></script><!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
+        <!-- CORE TEMPLATE JS - START --> 
+        <script src="<c:url value="/assets/mod4/js/scripts.js"/>" type="text/javascript"></script>  
+        <!-- Sidebar Graph - START --> 
+        <script src="<c:url value="/assets/mod4/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
+        <script src="<c:url value="/assets/mod4/js/chart-sparkline.js"/>" type="text/javascript"></script>
+
+        <script src="<c:url value="/assets/mod4/js/autosize.min.js"/>" type="text/javascript"></script>
+        <script src="<c:url value="/assets/mod4/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+        <!-- General section box modal start -->
+        <div class="modal" id="section-settings" tabindex="-1" role="dialog" aria-labelledby="ultraModal-Label" aria-hidden="true">
+            <div class="modal-dialog animated bounceInDown">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Section Settings</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        Body goes here...
+
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                        <button class="btn btn-success" type="button">Save changes</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- modal end -->
-</body>
+        <!-- modal end -->
+    </body>
 </html>
 
 
