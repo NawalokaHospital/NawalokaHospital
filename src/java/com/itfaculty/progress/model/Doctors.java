@@ -1,7 +1,8 @@
 package com.itfaculty.progress.model;
-// Generated Feb 3, 2017 11:29:05 PM by Hibernate Tools 4.3.1
+// Generated Mar 15, 2017 7:37:19 PM by Hibernate Tools 4.3.1
 
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
@@ -12,6 +13,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
 /**
@@ -31,27 +34,34 @@ public class Doctors  implements java.io.Serializable {
      private String doctorUsername;
      private String doctorPassword;
      private String doctorTelno;
-     private Set<Docappoinments> docappoinmentses = new HashSet<Docappoinments>(0);
+     private Date doctorStime;
+     private Date doctorEtime;
+     private String doctorType;
      private Set<Records> recordses = new HashSet<Records>(0);
 
     public Doctors() {
     }
 
 	
-    public Doctors(String doctorFirstname, String doctorLastname, String doctorUsername, String doctorPassword, String doctorTelno) {
+    public Doctors(String doctorFirstname, String doctorLastname, String doctorUsername, String doctorPassword, String doctorTelno, Date doctorStime, Date doctorEtime, String doctorType) {
         this.doctorFirstname = doctorFirstname;
         this.doctorLastname = doctorLastname;
         this.doctorUsername = doctorUsername;
         this.doctorPassword = doctorPassword;
         this.doctorTelno = doctorTelno;
+        this.doctorStime = doctorStime;
+        this.doctorEtime = doctorEtime;
+        this.doctorType = doctorType;
     }
-    public Doctors(String doctorFirstname, String doctorLastname, String doctorUsername, String doctorPassword, String doctorTelno, Set<Docappoinments> docappoinmentses, Set<Records> recordses) {
+    public Doctors(String doctorFirstname, String doctorLastname, String doctorUsername, String doctorPassword, String doctorTelno, Date doctorStime, Date doctorEtime, String doctorType, Set<Records> recordses) {
        this.doctorFirstname = doctorFirstname;
        this.doctorLastname = doctorLastname;
        this.doctorUsername = doctorUsername;
        this.doctorPassword = doctorPassword;
        this.doctorTelno = doctorTelno;
-       this.docappoinmentses = docappoinmentses;
+       this.doctorStime = doctorStime;
+       this.doctorEtime = doctorEtime;
+       this.doctorType = doctorType;
        this.recordses = recordses;
     }
    
@@ -117,15 +127,36 @@ public class Doctors  implements java.io.Serializable {
         this.doctorTelno = doctorTelno;
     }
 
-//@OneToMany(fetch=FetchType.LAZY, mappedBy="doctors")
-//    public Set<Docappoinments> getDocappoinmentses() {
-//        return this.docappoinmentses;
-//    }
-//    
-//    public void setDocappoinmentses(Set<Docappoinments> docappoinmentses) {
-//        this.docappoinmentses = docappoinmentses;
-//    }
-//
+    @Temporal(TemporalType.TIME)
+    @Column(name="doctor_stime", nullable=false, length=8)
+    public Date getDoctorStime() {
+        return this.doctorStime;
+    }
+    
+    public void setDoctorStime(Date doctorStime) {
+        this.doctorStime = doctorStime;
+    }
+
+    @Temporal(TemporalType.TIME)
+    @Column(name="doctor_etime", nullable=false, length=8)
+    public Date getDoctorEtime() {
+        return this.doctorEtime;
+    }
+    
+    public void setDoctorEtime(Date doctorEtime) {
+        this.doctorEtime = doctorEtime;
+    }
+
+    
+    @Column(name="doctor_type", nullable=false, length=100)
+    public String getDoctorType() {
+        return this.doctorType;
+    }
+    
+    public void setDoctorType(String doctorType) {
+        this.doctorType = doctorType;
+    }
+
 //@OneToMany(fetch=FetchType.LAZY, mappedBy="doctors")
 //    public Set<Records> getRecordses() {
 //        return this.recordses;

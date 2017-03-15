@@ -6,6 +6,7 @@
 package com.itfaculty.progress.services.Impl;
 
 import com.itfaculty.progress.dao.RecordsDao;
+import com.itfaculty.progress.model.Patients;
 import com.itfaculty.progress.model.Records;
 import com.itfaculty.progress.services.RecordsServices;
 import java.util.List;
@@ -27,6 +28,12 @@ public class RecordsServicesImpl implements RecordsServices {
     @Override
     public List<Records> GetAllRecords() {
         return recordsDao.GetAllRecords();
+    }
+
+    @Transactional
+    @Override
+    public Records GetRecords(Patients patients) {
+        return recordsDao.GetRecords(patients);
     }
 
 }

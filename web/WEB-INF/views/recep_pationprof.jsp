@@ -163,8 +163,8 @@
 
 
 
-                        <li class="open">
-                            <a href="javascript:;">
+                        <li class="">
+                            <a href="recep_mainpage">
 
                                 <span class="title">Dashboard</span>
                                 <span class="arrow open"></span>
@@ -172,7 +172,7 @@
                             <ul class="sub-menu" style='display:block;'>
                             </ul>
                         </li>
-                        <li class="disabled">
+                        <li class="open">
                             <a href="javascript:;">
 
                                 <span class="title">Add Patient Records</span>
@@ -184,7 +184,7 @@
                         <li class="">
                             <a href="javascript:;">
 
-                                <span class="title">Patient Registration</span>
+                                <span class="title">Patient Profile</span>
                                 <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu" >
@@ -277,21 +277,19 @@
 
                             <div class="col-md-12">
                                 <div class="col-xs-12 col-md-4" style="float: left;text-align: center">
-                                    <h2>Search Patient</h2>
-                                    <label>Patient Id:</label>
-                                    <p>Patient-ID:<input type="text" onkeyup="loadpatient();" id="keyval" /></p>                                      
-                                    <table>
-                                        <tr>
-                                            <th>Patient No</th>
-                                            <th>Patient Name</th>
-                                            <th>patientAge</th> 
-                                            <th></th>
-                                        </tr>
-                                        <tbody id="tdatapatient">
-
-                                        </tbody>
-                                    </table>
-
+                                    <h2>Add Patient Records</h2><br>      
+                                    First Name: <input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientFirstname}'/><br><br>
+                                    Last Name: <input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientLastname}'/><br><br>
+                                    NIC no: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientNicid}'/><br><br>
+                                    Gender: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientGender}'/><br><br>
+                                    Age: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientAge}'/><br><br>
+                                    Create Date: <input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientCreatedDate}'/><br><br>
+                                    <form:form method="POST" modelAttribute="addrec"> 
+                                        <form:input type="hidden" path="patientId" id="patientId" value="${pdata.patientId}"/>
+                                        Lab Id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <form:input style="text-align: center" type="text" path="labId" id="labId" value='${record.labassistants.labassistantId}' /><br><br>
+                                        Doctor Id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<form:input style="text-align: center" type="text" path="doctorID" id="doctorID" value='${record.doctors.doctorId}'/><br><br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" class='btn-primary' value="Submit" type="submit"/>
+                                    </form:form>
                                 </div>
                                 <div class="col-xs-12 col-md-4" style="text-align: center">
 
@@ -368,7 +366,7 @@
                                     $('#tdatapatient').append("<th>" + patient.patientNicid + "</th>");
                                     $('#tdatapatient').append("<th>" + patient.patientFirstname + "</th>");
                                     $('#tdatapatient').append("<th>" + patient.patientAge + "</th>");
-                                    $('#tdatapatient').append("<th><form action='recep_pationprof'><input type='hidden' name='user_name' id='user_name' value='" + patient.patientId + "'/><input value='View' type='submit' class='btn-success'/></form></th>");
+                                    $('#tdatapatient').append("<th><input value='View' type='button' class='btn-success'/></th>");
                                     $('#tdatapatient').append("</tr>");
                                 });
                             } else {

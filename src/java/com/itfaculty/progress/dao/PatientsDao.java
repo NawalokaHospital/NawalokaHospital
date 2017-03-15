@@ -14,5 +14,7 @@ import java.util.List;
  */
 public interface PatientsDao {
 
+    public Patients GetPatients(int PatientsID);
+
     List<Patients> GetAllPatients(String patientId);
 }

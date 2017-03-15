@@ -1,5 +1,5 @@
 package com.itfaculty.progress.model;
-// Generated Feb 3, 2017 11:29:05 PM by Hibernate Tools 4.3.1
+// Generated Mar 15, 2017 7:37:19 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -31,6 +31,9 @@ public class Patients  implements java.io.Serializable {
      private Integer patientId;
      private String patientFirstname;
      private String patientLastname;
+     private String patientNicid;
+     private String patientUname;
+     private String patientPassword;
      private String patientGender;
      private int patientAge;
      private String patientTelno;
@@ -42,18 +45,24 @@ public class Patients  implements java.io.Serializable {
     }
 
 	
-    public Patients(String patientFirstname, String patientLastname, String patientGender, int patientAge, String patientTelno, String patientAddress, Date patientCreatedDate) {
+    public Patients(String patientFirstname, String patientLastname, String patientNicid, String patientUname, String patientPassword, String patientGender, int patientAge, String patientTelno, String patientAddress, Date patientCreatedDate) {
         this.patientFirstname = patientFirstname;
         this.patientLastname = patientLastname;
+        this.patientNicid = patientNicid;
+        this.patientUname = patientUname;
+        this.patientPassword = patientPassword;
         this.patientGender = patientGender;
         this.patientAge = patientAge;
         this.patientTelno = patientTelno;
         this.patientAddress = patientAddress;
         this.patientCreatedDate = patientCreatedDate;
     }
-    public Patients(String patientFirstname, String patientLastname, String patientGender, int patientAge, String patientTelno, String patientAddress, Date patientCreatedDate, Set<Records> recordses) {
+    public Patients(String patientFirstname, String patientLastname, String patientNicid, String patientUname, String patientPassword, String patientGender, int patientAge, String patientTelno, String patientAddress, Date patientCreatedDate, Set<Records> recordses) {
        this.patientFirstname = patientFirstname;
        this.patientLastname = patientLastname;
+       this.patientNicid = patientNicid;
+       this.patientUname = patientUname;
+       this.patientPassword = patientPassword;
        this.patientGender = patientGender;
        this.patientAge = patientAge;
        this.patientTelno = patientTelno;
@@ -92,6 +101,36 @@ public class Patients  implements java.io.Serializable {
     
     public void setPatientLastname(String patientLastname) {
         this.patientLastname = patientLastname;
+    }
+
+    
+    @Column(name="patient_nicid", nullable=false, length=100)
+    public String getPatientNicid() {
+        return this.patientNicid;
+    }
+    
+    public void setPatientNicid(String patientNicid) {
+        this.patientNicid = patientNicid;
+    }
+
+    
+    @Column(name="patient_uname", nullable=false, length=100)
+    public String getPatientUname() {
+        return this.patientUname;
+    }
+    
+    public void setPatientUname(String patientUname) {
+        this.patientUname = patientUname;
+    }
+
+    
+    @Column(name="patient_password", nullable=false, length=100)
+    public String getPatientPassword() {
+        return this.patientPassword;
+    }
+    
+    public void setPatientPassword(String patientPassword) {
+        this.patientPassword = patientPassword;
     }
 
     

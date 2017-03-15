@@ -26,27 +26,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/")
 public class RegController {
-
+    
     @Autowired
     public DoctorsServices doctorsServices;
-
+    
     @Autowired
     public ReceptionistsServices ReceptionistsServices;
-
+    
     @Autowired
     public LabassistantsServices LabassistantsServices;
-
+    
     @RequestMapping(value = {"/reg_page"}, method = RequestMethod.GET)
     public String LoadRegPage(ModelMap map) {
         Regmodel regmod = new Regmodel();
         map.addAttribute("regObj", regmod);
         return "reg_page";
     }
-
+    
     @RequestMapping(value = {"/reg_page"}, method = RequestMethod.POST)
     public String SaveRegPage(login logdata, Regmodel regObj, ModelMap map) {
         map.addAttribute("regObj", regObj);
-
+        
         if (regObj.getSetuserrole().equals("Doctor") == true) {
             Doctors dc = new Doctors();
             dc.setDoctorFirstname(regObj.getFirstname());
@@ -54,6 +54,10 @@ public class RegController {
             dc.setDoctorUsername(regObj.getUsername());
             dc.setDoctorPassword(regObj.getPassword());
             dc.setDoctorTelno(regObj.getMobileno());
+            dc.setDoctorEtime(null);
+            dc.setDoctorType(null);
+            dc.setDoctorStime(null);
+            dc.setDoctorType(null);
             doctorsServices.addDoctors(dc);
             map.addAttribute("logdata", logdata);
             return "redirect:" + "login";

@@ -30,11 +30,19 @@ public class PatientsDaoImpl implements PatientsDao {
     @Override
     public List<Patients> GetAllPatients(String patientId) {
         Criteria cr = sessionFactory.getCurrentSession().createCriteria(Patients.class);
-        Criterion frist = Restrictions.ilike("patientFirstname", patientId + "%", MatchMode.ANYWHERE);
-        Criterion last = Restrictions.ilike("patientLastname", patientId + "%", MatchMode.ANYWHERE);
+        Criterion frist = Restrictions.ilike("patientNicid", patientId + "%", MatchMode.ANYWHERE);
+        Criterion last = Restrictions.ilike("patientFirstname", patientId + "%", MatchMode.ANYWHERE);
         LogicalExpression orExp = Restrictions.or(frist, last);
         cr.add(orExp);
         List<Patients> result = cr.list();
+        return result;
+    }
+
+    @Override
+    public Patients GetPatients(int PatientsID) {
+        Criteria cr = sessionFactory.getCurrentSession().createCriteria(Patients.class);
+        cr.add(Restrictions.eq("patientId", PatientsID));
+        Patients result = (Patients) cr.uniqueResult();
         return result;
     }
 

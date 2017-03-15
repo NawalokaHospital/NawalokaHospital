@@ -38,6 +38,6 @@ public class ReceptionistsDaoImpl implements ReceptionistsDao {
 
     @Override
     public void addReceptionists(Receptionists receptionists) {
-        sessionFactory.getCurrentSession().saveOrUpdate(receptionists);
+         sessionFactory.getCurrentSession().save(receptionists);
     }
 }

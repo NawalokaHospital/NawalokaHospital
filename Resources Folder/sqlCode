@@ -7,6 +7,9 @@ CREATE TABLE `patients`(
 	`patient_id` INT(11) NOT NULL AUTO_INCREMENT,
 	`patient_firstname` VARCHAR(100) NOT NULL,
 	`patient_lastname` VARCHAR(100) NOT NULL,
+	`patient_nicid` VARCHAR(100) NOT NULL,
+	`patient_uname` VARCHAR(100) NOT NULL,
+	`patient_password` VARCHAR(100) NOT NULL,
         `patient_gender` VARCHAR(10) NOT NULL,
  	`patient_age` INT(11) NOT NULL,
 	`patient_telno` VARCHAR(100) NOT NULL,
@@ -23,17 +26,11 @@ CREATE TABLE `doctors`(
 	`doctor_username` VARCHAR(100) NOT NULL,
         `doctor_password` VARCHAR(255) NOT NULL,
 	`doctor_telno` VARCHAR(100) NOT NULL,
+	`doctor_stime` time NOT NULL,
+	`doctor_etime` time NOT NULL,
+	`doctor_type` VARCHAR(100) NOT NULL,
 	PRIMARY KEY (`doctor_id`),
 	UNIQUE(`doctor_username`)	
-);
-
-
-CREATE TABLE `docappoinments`(  
-	`docappoinments_id` INT(11) NOT NULL AUTO_INCREMENT,
-	`doctors_doctor_id` INT(11) NOT NULL,
-	`doctor_availabletime` DATETIME NOT NULL,
-	 PRIMARY KEY(`docappoinments_id`),
-	 FOREIGN KEY (`doctors_doctor_id`) REFERENCES `doctors` (`doctor_id`)
 );
 
 CREATE TABLE `receptionists`(
@@ -42,7 +39,8 @@ CREATE TABLE `receptionists`(
 	`receptionist_lastname` VARCHAR(100) NOT NULL,
 	`receptionist_username` VARCHAR(100) NOT NULL,
 	`receptionist_password` VARCHAR(255) NOT NULL,
-	PRIMARY KEY (`receptionist_id`)	
+	PRIMARY KEY (`receptionist_id`)	,
+	UNIQUE(`receptionist_username`)
 );
 
 CREATE TABLE `labassistants`(
@@ -51,7 +49,11 @@ CREATE TABLE `labassistants`(
 	`labassistant_lastname` VARCHAR(100) NOT NULL,
 	`labassistant_username` VARCHAR(100) NOT NULL,
 	`labassistant_password` VARCHAR(255) NOT NULL,
-	PRIMARY KEY (`labassistant_id`)
+	`labassistant_type` VARCHAR(100) NOT NULL,
+	`labassistant_stime` time NOT NULL,
+	`labassistant_etime` time NOT NULL,
+	PRIMARY KEY (`labassistant_id`),
+	UNIQUE(`labassistant_username`)
 );
 
 CREATE TABLE IF NOT EXISTS `records`(

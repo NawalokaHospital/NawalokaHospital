@@ -39,7 +39,7 @@ public class LabassistantsDaoImpl implements LabassistantsDao {
 
     @Override
     public void addLabassistants(Labassistants labassistants) {
-        sessionFactory.getCurrentSession().saveOrUpdate(labassistants);
+        sessionFactory.getCurrentSession().save(labassistants);
     }
 
     @Override

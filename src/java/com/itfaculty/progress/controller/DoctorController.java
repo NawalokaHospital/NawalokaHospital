@@ -5,6 +5,7 @@
  */
 package com.itfaculty.progress.controller;
 
+import com.itfaculty.progress.model.login;
 import com.itfaculty.progress.services.RecordsServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,8 @@ public class DoctorController {
 
     @RequestMapping(value = {"/doc_mainpage"}, method = RequestMethod.GET)
     public String LoadRegDoctorPage(ModelMap map) {
+        login log = new login();
+        map.addAttribute("logpatient", log);
         return "doc_mainpage";
     }    
     

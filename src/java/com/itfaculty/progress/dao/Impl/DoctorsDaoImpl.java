@@ -28,7 +28,7 @@ public class DoctorsDaoImpl implements DoctorsDao {
 
     @Override
     public void addDoctors(Doctors doctors) {
-        sessionFactory.getCurrentSession().saveOrUpdate(doctors);
+        sessionFactory.getCurrentSession().save(doctors);
     }
 
     @Override

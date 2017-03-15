@@ -5,6 +5,7 @@
  */
 package com.itfaculty.progress.dao;
 
+import com.itfaculty.progress.model.Patients;
 import com.itfaculty.progress.model.Records;
 import java.util.List;
 
@@ -13,6 +14,8 @@ import java.util.List;
  * @author Praneeth Madusanka
  */
 public interface RecordsDao {
+
+    public Records GetRecords(Patients patients);
 
     public List<Records> GetAllRecords();
 }

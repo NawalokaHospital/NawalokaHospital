@@ -14,5 +14,7 @@ import java.util.List;
  */
 public interface PatientsServices {
 
+    public Patients GetPatients(int PatientsID);
+    
     List<Patients> GetAllPatients(String patientId);
 }

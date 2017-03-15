@@ -1,5 +1,5 @@
 package com.itfaculty.progress.model;
-// Generated Feb 3, 2017 11:29:05 PM by Hibernate Tools 4.3.1
+// Generated Mar 15, 2017 7:37:19 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
