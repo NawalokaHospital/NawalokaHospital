@@ -1,0 +1,73 @@
+
+
+******* First create the databases as "nawalokahospital". **********
+
+
+CREATE TABLE `patients`(
+	`patient_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`patient_firstname` VARCHAR(100) NOT NULL,
+	`patient_lastname` VARCHAR(100) NOT NULL,
+        `patient_gender` VARCHAR(10) NOT NULL,
+ 	`patient_age` INT(11) NOT NULL,
+	`patient_telno` VARCHAR(100) NOT NULL,
+	`patient_address` VARCHAR(255) NOT NULL,
+	`patient_created_date` DATETIME NOT NULL,
+     PRIMARY KEY (`patient_id`),
+	 UNIQUE (`patient_telno`)
+);
+
+CREATE TABLE `doctors`(
+	`doctor_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`doctor_firstname` VARCHAR(100) NOT NULL,
+	`doctor_lastname` VARCHAR(100) NOT NULL,
+	`doctor_username` VARCHAR(100) NOT NULL,
+        `doctor_password` VARCHAR(255) NOT NULL,
+	`doctor_telno` VARCHAR(100) NOT NULL,
+	PRIMARY KEY (`doctor_id`),
+	UNIQUE(`doctor_username`)	
+);
+
+
+CREATE TABLE `docappoinments`(  
+	`docappoinments_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`doctors_doctor_id` INT(11) NOT NULL,
+	`doctor_availabletime` DATETIME NOT NULL,
+	 PRIMARY KEY(`docappoinments_id`),
+	 FOREIGN KEY (`doctors_doctor_id`) REFERENCES `doctors` (`doctor_id`)
+);
+
+CREATE TABLE `receptionists`(
+	`receptionist_id` INT(11) NOT NULL AUTO_INCREMENT,	
+	`receptionist_firstname` VARCHAR(100) NOT NULL,
+	`receptionist_lastname` VARCHAR(100) NOT NULL,
+	`receptionist_username` VARCHAR(100) NOT NULL,
+	`receptionist_password` VARCHAR(255) NOT NULL,
+	PRIMARY KEY (`receptionist_id`)	
+);
+
+CREATE TABLE `labassistants`(
+	`labassistant_id` INT(11) NOT NULL AUTO_INCREMENT,
+	`labassistant_firstname` VARCHAR(100) NOT NULL,
+	`labassistant_lastname` VARCHAR(100) NOT NULL,
+	`labassistant_username` VARCHAR(100) NOT NULL,
+	`labassistant_password` VARCHAR(255) NOT NULL,
+	PRIMARY KEY (`labassistant_id`)
+);
+
+CREATE TABLE IF NOT EXISTS `records`(
+	`record_id` INT(11) NOT NULL AUTO_INCREMENT,
+    `doctors_doctor_id` INT(11) NOT NULL,
+	`patients_patient_id` INT(11) NOT NULL ,
+	`labassistants_labassistant_id` INT(11) NOT NULL ,
+	`record_nameofmedicine` VARCHAR(255) NOT NULL,
+	`record_frequency` VARCHAR(255) NOT NULL,
+	`record_condition` VARCHAR(255) NOT NULL,
+	`record_physician` VARCHAR(255) NOT NULL,
+	`record_image` VARCHAR(255) NOT NULL,
+	`record_result_prescription` VARCHAR(255) NOT NULL,
+	`record_created_date` DATETIME NOT NULL,
+	PRIMARY KEY (`record_id`),
+	FOREIGN KEY (`doctors_doctor_id`) REFERENCES `doctors` (`doctor_id`),
+	FOREIGN KEY (`labassistants_labassistant_id`) REFERENCES `labassistants` (`labassistant_id`),
+	FOREIGN KEY (`patients_patient_id`) REFERENCES `patients` (`patient_id`)
+);
