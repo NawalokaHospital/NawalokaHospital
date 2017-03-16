@@ -46,4 +46,15 @@ public class PatientsDaoImpl implements PatientsDao {
         return result;
     }
 
+    @Override
+    public Patients loginPatient(Patients patients) {
+        Criteria cr = sessionFactory.getCurrentSession().createCriteria(Patients.class);
+        Criterion usernam = Restrictions.eq("patientUname", patients.getPatientUname());
+        Criterion passw = Restrictions.eq("patientPassword", patients.getPatientPassword());
+        LogicalExpression andExp = Restrictions.and(usernam, passw);
+        cr.add(andExp);
+        Patients result = (Patients) cr.uniqueResult();
+        return result;
+    }
+
 }

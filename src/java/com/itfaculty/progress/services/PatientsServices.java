@@ -17,4 +17,6 @@ public interface PatientsServices {
     public Patients GetPatients(int PatientsID);
     
     List<Patients> GetAllPatients(String patientId);
+    
+    public Patients loginPatient(Patients patients);
 }

@@ -220,82 +220,36 @@
                         <div class="page-title">
 
                             <div class="pull-left">
-                                <h1 class="title">Report Management System</h1>                            </div>
-
-                            <div class="pull-right hidden-xs">
-                                <ol class="breadcrumb">
-                                    <li>
-                                        <a href="index.html"><i class="fa fa-home"></i>Home</a>
-                                    </li>
-
-                                    <li class="active">
-                                        <strong>Report Management System</strong>
-                                    </li>
-                                </ol>
-                            </div>
-
+                                <h1 class="title">Report Management System</h1>                            </div>                            
                         </div>
                     </div>
                     <div class="clearfix"></div>
-                    <div class="form-group has-warning">
-                        <label class="form-label" for="field-9">Patient ID</label>
-                        <span class="desc">e.g. "55615"</span>
-                        <div class="controls">
-                            <input type="text" class="form-control" id="field-9" placeholder="Enter your number" >
-                        </div>
+                    
+                   
+                    <div style="margin-left: 40%;">
+                        
+                        <form:form method="POST" modelAttribute="logdata">    
+
+                    <p>
+                        <label for="user_login">Patient UserName<br />
+                            <form:input path="username" id="username"/>
+                            <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
+                    </p>
+
+                    <p>
+                        <label for="user_login">Patient Password<br />
+                            <form:input type="password" path="password" id="password" class="input"/>
+                            <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
+                    </p>
+
+
+                    <p class="submit">
+                        <input style="width: 20%;" type="submit" name="wp-submit" id="wp-submit" class="btn btn-orange btn-block" value="Submit" />
+                    </p>
+
+                </form:form>
+                        
                     </div>
-                    <div class="form-group has-warning">
-                        <label class="form-label" for="field-9">Lab Assistant ID</label>
-                        <span class="desc">e.g. "65248"</span>
-                        <div class="controls">
-                            <input type="text" class="form-control" id="field-9" placeholder="Enter your number" >
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <section class="box ">
-                            <header class="panel_header">
-                                <h2 class="title pull-left">Custom Uploader</h2>
-                                <div class="actions panel_actions pull-right">
-                                    <i class="box_toggle fa fa-chevron-down"></i>
-
-                                </div>
-                            </header>
-                            <div class="content-body">    <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-
-
-                                        <div class="custom-dropzone">
-                                            <div class="col-sm-8 drop-table">
-
-                                                <table class="table" id="custom-droptable">
-                                                    <thead>
-                                                        <tr>
-                                                            <th width="1%" class="text-center">#</th>
-                                                            <th width="50%">Name</th>
-                                                            <th width="20%">Progress</th>
-                                                            <th>Size</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td colspan="4">No Files Uploaded Yet!</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <div class="col-sm-4 drop-area text-center">
-                                                <div id="customDZ" class="droppable-area">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <button type="button" class="btn btn-success">Submit</button>
-                                        <a href="ui-accordion.html" class="btn btn-info" role="button">Back</a> 
-
-                                    </div>
-                                </div>
-                            </div>
-                        </section></div>
 
 
 
