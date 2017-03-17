@@ -21,10 +21,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/**
- *
- * @author Praneeth
- */
+
 @Controller
 @RequestMapping("/")
 public class IndexController {

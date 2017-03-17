@@ -8,10 +8,7 @@ package com.itfaculty.progress.dao;
 import com.itfaculty.progress.model.Doctors;
 import java.util.List;
 
-/**
- *
- * @author Praneeth Madusanka
- */
+
 public interface DoctorsDao {
 
     public void addDoctors(Doctors doctors);

@@ -8,10 +8,7 @@ package com.itfaculty.progress.model;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author Praneeth Madusanka
- */
+
 public class Regmodel {
 
     private String firstname;

@@ -8,10 +8,7 @@ package com.itfaculty.progress.dao;
 import com.itfaculty.progress.model.Patients;
 import java.util.List;
 
-/**
- *
- * @author Praneeth Madusanka
- */
+
 public interface PatientsDao {
 
     public Patients GetPatients(int PatientsID);

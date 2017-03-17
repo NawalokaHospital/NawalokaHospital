@@ -11,12 +11,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- 
-         * @Package: Ultra Admin - Responsive Theme
-         * @Subpackage: Bootstrap
-         * @Version: 2.0
-         * This file is part of Ultra Admin Theme.
-        -->
+       
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <meta charset="utf-8" />
         <title>Ultra Admin : Form Elements</title>

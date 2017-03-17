@@ -5,10 +5,7 @@
  */
 package com.itfaculty.progress.model;
 
-/**
- *
- * @author user
- */
+
 public class login {
 
     private String username;

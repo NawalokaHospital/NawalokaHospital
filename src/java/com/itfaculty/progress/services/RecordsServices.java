@@ -9,10 +9,7 @@ import com.itfaculty.progress.model.Patients;
 import com.itfaculty.progress.model.Records;
 import java.util.List;
 
-/**
- *
- * @author Praneeth Madusanka
- */
+
 public interface RecordsServices {
 
      public Records GetRecords(Patients patients);

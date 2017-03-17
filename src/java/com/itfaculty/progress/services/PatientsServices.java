@@ -8,10 +8,7 @@ package com.itfaculty.progress.services;
 import com.itfaculty.progress.model.Patients;
 import java.util.List;
 
-/**
- *
- * @author Praneeth Madusanka
- */
+
 public interface PatientsServices {
 
     public Patients GetPatients(int PatientsID);

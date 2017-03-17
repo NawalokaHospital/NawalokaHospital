@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ui-reg
-    Created on : Feb 3, 2017, 6:11:49 PM
-    Author     : Praneeth Madusanka
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>

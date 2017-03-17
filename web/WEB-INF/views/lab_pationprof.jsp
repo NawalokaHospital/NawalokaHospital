@@ -11,12 +11,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- 
-         * @Package: Ultra Admin - Responsive Theme
-         * @Subpackage: Bootstrap
-         * @Version: 2.0
-         * This file is part of Ultra Admin Theme.
-        -->
+
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <meta charset="utf-8" />
         <title>Ultra Admin : Form Elements</title>
@@ -87,7 +82,7 @@
                     <ul class="info-menu right-links list-inline list-unstyled">
                         <li class="profile">
                             <a href="#" data-toggle="dropdown" class="toggle">
-                                <img src="<c:url value="/assets/mod1/images/avatar-1.png"/>" alt="user-image" class="img-circle img-inline">
+                                <img src="<c:url value="/assets/mod2/images/lab.png"/>" alt="user-image" class="img-circle img-inline">
                                 <span style="color: black">UserName : <%=val%> <i class="fa fa-angle-down"></i></span>
                             </a>
                             <ul class="dropdown-menu profile animated fadeIn">
@@ -138,7 +133,7 @@
 
                         <div class="profile-image col-md-4 col-sm-4 col-xs-4">
                             <a href="ui-profile.html">
-                                <img src="https://cdn2.iconfinder.com/data/icons/medicine-9/512/hospital-512.png" class="img-responsive img-circle" style="background-color: white">
+                                <img src="assets/mod2/images/naw.png" class="img-responsive img-circle" style="background-color: white">
                             </a>
                         </div>
 
@@ -164,398 +159,158 @@
 
 
                         <li class="">
-                            <a href="recep_mainpage">
 
-                                <span class="title">Dashboard</span>
-                                <span class="arrow open"></span>
-                            </a>
                             <ul class="sub-menu" style='display:block;'>
                             </ul>
                         </li>
-                        <li class="open">
-                            <a href="javascript:;">
-
-                                <span class="title">Add Patient Test Image</span>
-                                <span class="arrow "></span>
-                            </a>
-
-                        </li>
-
                         <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">Patient Profile</span>
-                                <span class="arrow "></span>
-                            </a>
+                            <a href="lab_test_view.html" class="list-group-item active">Medical Test</a>
                             <ul class="sub-menu" >
 
                             </ul>
                         </li>
-
-
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">Add New User</span>
-                                <span class="arrow "></span>
-                            </a>
-
-                        </li>
-
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">User Information</span>
-                                <span class="arrow "></span>
-                            </a>
-
-                        </li>
-
-
-
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">Upload Report</span>
-                                <span class="arrow "></span>
-                            </a>
-                            <ul class="sub-menu" >
-
-
-                            </ul>
                         </li>
                 </div>
                 <!-- MAIN MENU - END -->
 
 
 
-                <div class="project-info">
-
-                    <div class="block1">
-                        <div class="data">
-                            <span class='title'>New&nbsp;Orders</span>
-                            <span class='total'>2,345</span>
-                        </div>
-                        <div class="graph">
-                            <span class="sidebar_orders">...</span>
-                        </div>
-                    </div>
-
-                    <div class="block2">
-                        <div class="data">
-                            <span class='title'>Visitors</span>
-                            <span class='total'>345</span>
-                        </div>
-                        <div class="graph">
-                            <span class="sidebar_visitors">...</span>
-                        </div>
-                    </div>
-
-                </div>
-
 
 
             </div>
-            <!--  SIDEBAR - END -->
-            <!-- START CONTENT -->
-            <section id="main-content" class=" ">
-                <section class="wrapper" style='margin-top:60px;display:inline-block;width:100%;padding:15px 0 0 15px;'>
 
-                    <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
-                        <div class="page-title">
 
-                            <div class="pull-left">
-                                <h1 class="title">Reception main page</h1>                 
-                            </div>                           
 
-                        </div>
+        </div>
+        <!--  SIDEBAR - END -->
+        <!-- START CONTENT -->
+        <section id="main-content" class=" ">
+            <section class="wrapper" style='margin-top:60px;display:inline-block;width:100%;padding:15px 0 0 15px;'>
+
+                <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+                    <div class="page-title">
+
+                        <div class="pull-left">
+                            <h1 class="title">Labassistant main page</h1>                 
+                        </div>                           
+
                     </div>
-                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
 
-                    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
-                        <section class="box ">
+                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                    <section class="box ">
 
-                            <div class="col-md-12">
-                                <div class="col-xs-12 col-md-12" style="text-align: center">
-                                    <h2>Add Patient Records</h2><br>      
-                                    First Name: <input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientFirstname}'/><br><br>
-                                    Last Name: <input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientLastname}'/><br><br>
-                                    NIC no: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientNicid}'/><br><br>
-                                    Gender: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientGender}'/><br><br>
-                                    Age: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientAge}'/><br><br>
-                                    Create Date: <input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientCreatedDate}'/><br><br>
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                <h4>Welcome to Patient Profile</h4>
+                                <h2> Test Reports</h2> <br>
+                                First Name: <input style="text-align: center" disabled="disabled" type="text" value='${patientinfo.patientFirstname}'/><br><br>
+                                Last Name: <input style="text-align: center" disabled="disabled" type="text" value='${patientinfo.patientLastname}'/><br><br>                                                                
+                                Create Date: <input style="text-align: center" disabled="disabled" type="text" value='${patientinfo.patientCreatedDate}'/><br><br>
+                                Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${patirec.recordFrequency}'/><br><br>
+                            </div>
+                            <div class="col-md-6">
+                                <div style="max-width: 650px; margin: auto; padding-top: 40px">
+                                    <h1 class="page-header">Test Image Upload Form</h1>
+                                    <p class="lead">Select a PNG or JPEG image, having maximum size <span id="max-size"></span> 500KB.</p>
 
+                                    <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
+                                        <div id="image-preview-div" style="display: none">
+                                            <label for="exampleInputFile">Selected image:</label>
+                                            <br>
+                                            <img id="preview-img" src="noimage">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="file" name="file" id="file" required>
+                                        </div>
+                                        <button class="btn btn-lg btn-primary" id="upload-button" type="submit" disabled>Upload image</button>
+                                    </form>
+
+                                    <br>
+                                    <div class="alert alert-info" id="loading" style="display: none;" role="alert">
+                                        Uploading image...
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="message"></div>
                                 </div>
-
-
                             </div>
 
-
-                        </section>
-                    </div>
+                        </div>
 
 
 
-                </section>
+
+                </div>
+
+
             </section>
         </div>
-        <script>
-
-        </script>
 
 
 
+    </section>
+</section>
+</div>
+<script>
+
+</script>
+
+<!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
+
+
+<!-- CORE JS FRAMEWORK - START --> 
+<script src="<c:url value="/assets/mod4/js/jquery-1.11.2.min.js"/>" type="text/javascript"></script> 
+<script src="<c:url value="/assets/mod4/js/jquery.easing.min.js"/>" type="text/javascript"></script> 
+<script src="<c:url value="/assets/mod4/js/bootstrap.min.js"/>" type="text/javascript"></script> 
+<script src="<c:url value="/assets/mod4/js/pace.min.js"/>" type="text/javascript"></script>  
+<script src="<c:url value="/assets/mod4/js/perfect-scrollbar.min.js"/>" type="text/javascript"></script> 
+<script src="<c:url value="/assets/mod4/js/viewportchecker.js"/>" type="text/javascript"></script>  
+<!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
+<script src="<c:url value="/assets/mod4/js/icheck.min.js"/>" type="text/javascript"></script><!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
+<!-- CORE TEMPLATE JS - START --> 
+<script src="<c:url value="/assets/mod4/js/scripts.js"/>" type="text/javascript"></script>  
+<!-- Sidebar Graph - START --> 
+<script src="<c:url value="/assets/mod4/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/assets/mod4/js/chart-sparkline.js"/>" type="text/javascript"></script>
+
+<script src="<c:url value="/assets/mod4/js/autosize.min.js"/>" type="text/javascript"></script>
+<script src="<c:url value="/assets/mod4/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
 
 
 
 
-        <!-- END CONTENT -->
-        <div class="page-chatapi hideit">
 
-            <div class="search-bar">
-                <input type="text" placeholder="Search" class="form-control">
+
+
+
+
+<!-- General section box modal start -->
+<div class="modal" id="section-settings" tabindex="-1" role="dialog" aria-labelledby="ultraModal-Label" aria-hidden="true">
+    <div class="modal-dialog animated bounceInDown">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Section Settings</h4>
             </div>
+            <div class="modal-body">
 
-            <div class="chat-wrapper">
-                <h4 class="group-head">Groups</h4>
-                <ul class="group-list list-unstyled">
-                    <li class="group-row">
-                        <div class="group-status available">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                        <div class="group-info">
-                            <h4><a href="#">Work</a></h4>
-                        </div>
-                    </li>
-                    <li class="group-row">
-                        <div class="group-status away">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                        <div class="group-info">
-                            <h4><a href="#">Friends</a></h4>
-                        </div>
-                    </li>
+                Body goes here...
 
-                </ul>
-
-
-                <h4 class="group-head">Favourites</h4>
-                <ul class="contact-list">
-
-                    <li class="user-row" id='chat_user_1' data-user-id='1'>
-                        <div class="user-img">
-                            <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
-                        </div>
-                        <div class="user-info">
-                            <h4><a href="#">Clarine Vassar</a></h4>
-                            <span class="status available" data-status="available"> Available</span>
-                        </div>
-                        <div class="user-status available">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                    </li>
-                    <li class="user-row" id='chat_user_2' data-user-id='2'>
-                        <div class="user-img">
-                            <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
-                        </div>
-                        <div class="user-info">
-                            <h4><a href="#">Brooks Latshaw</a></h4>
-                            <span class="status away" data-status="away"> Away</span>
-                        </div>
-                        <div class="user-status away">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                    </li>
-                    <li class="user-row" id='chat_user_3' data-user-id='3'>
-                        <div class="user-img">
-                            <a href="#"><img src="data/profile/avatar-3.png" alt=""></a>
-                        </div>
-                        <div class="user-info">
-                            <h4><a href="#">Clementina Brodeur</a></h4>
-                            <span class="status busy" data-status="busy"> Busy</span>
-                        </div>
-                        <div class="user-status busy">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                    </li>
-
-                </ul>
-
-
-                <h4 class="group-head">More Contacts</h4>
-                <ul class="contact-list">
-
-                    <li class="user-row" id='chat_user_4' data-user-id='4'>
-                        <div class="user-img">
-                            <a href="#"><img src="data/profile/avatar-4.png" alt=""></a>
-                        </div>
-                        <div class="user-info">
-                            <h4><a href="#">Carri Busey</a></h4>
-                            <span class="status offline" data-status="offline"> Offline</span>
-                        </div>
-                        <div class="user-status offline">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                    </li>
-                    <li class="user-row" id='chat_user_5' data-user-id='5'>
-                        <div class="user-img">
-                            <a href="#"><img src="data/profile/avatar-5.png" alt=""></a>
-                        </div>
-                        <div class="user-info">
-                            <h4><a href="#">Melissa Dock</a></h4>
-                            <span class="status offline" data-status="offline"> Offline</span>
-                        </div>
-                        <div class="user-status offline">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                    </li>
-                    <li class="user-row" id='chat_user_6' data-user-id='6'>
-                        <div class="user-img">
-                            <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
-                        </div>
-                        <div class="user-info">
-                            <h4><a href="#">Verdell Rea</a></h4>
-                            <span class="status available" data-status="available"> Available</span>
-                        </div>
-                        <div class="user-status available">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                    </li>
-                    <li class="user-row" id='chat_user_7' data-user-id='7'>
-                        <div class="user-img">
-                            <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
-                        </div>
-                        <div class="user-info">
-                            <h4><a href="#">Linette Lheureux</a></h4>
-                            <span class="status busy" data-status="busy"> Busy</span>
-                        </div>
-                        <div class="user-status busy">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                    </li>
-                    <li class="user-row" id='chat_user_8' data-user-id='8'>
-                        <div class="user-img">
-                            <a href="#"><img src="data/profile/avatar-3.png" alt=""></a>
-                        </div>
-                        <div class="user-info">
-                            <h4><a href="#">Araceli Boatright</a></h4>
-                            <span class="status away" data-status="away"> Away</span>
-                        </div>
-                        <div class="user-status away">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                    </li>
-                    <li class="user-row" id='chat_user_9' data-user-id='9'>
-                        <div class="user-img">
-                            <a href="#"><img src="data/profile/avatar-4.png" alt=""></a>
-                        </div>
-                        <div class="user-info">
-                            <h4><a href="#">Clay Peskin</a></h4>
-                            <span class="status busy" data-status="busy"> Busy</span>
-                        </div>
-                        <div class="user-status busy">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                    </li>
-                    <li class="user-row" id='chat_user_10' data-user-id='10'>
-                        <div class="user-img">
-                            <a href="#"><img src="data/profile/avatar-5.png" alt=""></a>
-                        </div>
-                        <div class="user-info">
-                            <h4><a href="#">Loni Tindall</a></h4>
-                            <span class="status away" data-status="away"> Away</span>
-                        </div>
-                        <div class="user-status away">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                    </li>
-                    <li class="user-row" id='chat_user_11' data-user-id='11'>
-                        <div class="user-img">
-                            <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
-                        </div>
-                        <div class="user-info">
-                            <h4><a href="#">Tanisha Kimbro</a></h4>
-                            <span class="status idle" data-status="idle"> Idle</span>
-                        </div>
-                        <div class="user-status idle">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                    </li>
-                    <li class="user-row" id='chat_user_12' data-user-id='12'>
-                        <div class="user-img">
-                            <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
-                        </div>
-                        <div class="user-info">
-                            <h4><a href="#">Jovita Tisdale</a></h4>
-                            <span class="status idle" data-status="idle"> Idle</span>
-                        </div>
-                        <div class="user-status idle">
-                            <i class="fa fa-circle"></i>
-                        </div>
-                    </li>
-
-                </ul>
             </div>
-
-        </div>
-
-
-        <div class="chatapi-windows ">
-
-
-        </div>    
-        <!-- END CONTAINER -->
-        <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
-
-
-        <!-- CORE JS FRAMEWORK - START --> 
-        <script src="<c:url value="/assets/mod4/js/jquery-1.11.2.min.js"/>" type="text/javascript"></script> 
-        <script src="<c:url value="/assets/mod4/js/jquery.easing.min.js"/>" type="text/javascript"></script> 
-        <script src="<c:url value="/assets/mod4/js/bootstrap.min.js"/>" type="text/javascript"></script> 
-        <script src="<c:url value="/assets/mod4/js/pace.min.js"/>" type="text/javascript"></script>  
-        <script src="<c:url value="/assets/mod4/js/perfect-scrollbar.min.js"/>" type="text/javascript"></script> 
-        <script src="<c:url value="/assets/mod4/js/viewportchecker.js"/>" type="text/javascript"></script>  
-        <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
-        <script src="<c:url value="/assets/mod4/js/icheck.min.js"/>" type="text/javascript"></script><!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
-        <!-- CORE TEMPLATE JS - START --> 
-        <script src="<c:url value="/assets/mod4/js/scripts.js"/>" type="text/javascript"></script>  
-        <!-- Sidebar Graph - START --> 
-        <script src="<c:url value="/assets/mod4/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
-        <script src="<c:url value="/assets/mod4/js/chart-sparkline.js"/>" type="text/javascript"></script>
-
-        <script src="<c:url value="/assets/mod4/js/autosize.min.js"/>" type="text/javascript"></script>
-        <script src="<c:url value="/assets/mod4/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
-
-
-
-
-
-
-
-
-
-        <!-- General section box modal start -->
-        <div class="modal" id="section-settings" tabindex="-1" role="dialog" aria-labelledby="ultraModal-Label" aria-hidden="true">
-            <div class="modal-dialog animated bounceInDown">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Section Settings</h4>
-                    </div>
-                    <div class="modal-body">
-
-                        Body goes here...
-
-                    </div>
-                    <div class="modal-footer">
-                        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-                        <button class="btn btn-success" type="button">Save changes</button>
-                    </div>
-                </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                <button class="btn btn-success" type="button">Save changes</button>
             </div>
         </div>
-        <!-- modal end -->
-    </body>
+    </div>
+</div>
+<!-- modal end -->
+</body>
 </html>
 
 

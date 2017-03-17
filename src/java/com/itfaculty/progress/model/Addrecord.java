@@ -5,10 +5,7 @@
  */
 package com.itfaculty.progress.model;
 
-/**
- *
- * @author Praneeth Madusanka
- */
+
 public class Addrecord {
 
     private int doctorID;

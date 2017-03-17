@@ -60,7 +60,7 @@
                     <ul class="info-menu right-links list-inline list-unstyled">
                         <li class="profile">
                             <a href="#" data-toggle="dropdown" class="toggle">
-                                <img src="<c:url value="/assets/mod1/images/avatar-1.png"/>" alt="user-image" class="img-circle img-inline">
+                                <img src="<c:url value="/assets/mod2/images/lab.png"/>" alt="user-image" class="img-circle img-inline">
                                 <span style="color: black">UserName : <%=val%> <i class="fa fa-angle-down"></i></span>
                             </a>
                             <ul class="dropdown-menu profile animated fadeIn">
@@ -116,7 +116,7 @@
 
                         <div class="profile-image col-md-4 col-sm-4 col-xs-4">
                             <a href="ui-profile.html">
-                                <img src="https://cdn2.iconfinder.com/data/icons/medicine-9/512/hospital-512.png" class="img-responsive img-circle" style="background-color: white">
+                                <img src="assets/mod2/images/naw.png" class="img-responsive img-circle" style="background-color: white">
                             </a>
                         </div>
 
@@ -153,46 +153,7 @@
                             <ul class="sub-menu" style='display:block;'>
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">Patient Information</span>
-                                <span class="arrow "></span>
-                            </a>
-
-                        </li>
-
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">Patient Profile</span>
-                                <span class="arrow "></span>
-                            </a>
-                            <ul class="sub-menu" >
-
-                            </ul>
-                        </li>
-
-
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">Add New User</span>
-                                <span class="arrow "></span>
-                            </a>
-
-                        </li>
-
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">User Information</span>
-                                <span class="arrow "></span>
-                            </a>
-
-                        </li>
-
-
+                       
 
                         <li class="">
                             <a href="javascript:;">
