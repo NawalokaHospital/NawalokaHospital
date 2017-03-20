@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 @Service("recordsServices")
 public class RecordsServicesImpl implements RecordsServices {
 
@@ -31,6 +30,24 @@ public class RecordsServicesImpl implements RecordsServices {
     @Override
     public Records GetRecords(Patients patients) {
         return recordsDao.GetRecords(patients);
+    }
+
+    @Transactional
+    @Override
+    public void addRecords(Records records) {
+        recordsDao.addRecords(records);
+    }
+
+    @Transactional
+    @Override
+    public void UpdateRecords(Records record) {
+        recordsDao.UpdateRecords(record);
+    }
+
+    @Transactional
+    @Override
+    public Records GetRecordsById(int recordsId) {
+        return recordsDao.GetRecordsById(recordsId);
     }
 
 }

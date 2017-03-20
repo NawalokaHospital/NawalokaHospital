@@ -9,10 +9,15 @@ import com.itfaculty.progress.model.Patients;
 import com.itfaculty.progress.model.Records;
 import java.util.List;
 
-
 public interface RecordsServices {
 
-     public Records GetRecords(Patients patients);
-    
+    public Records GetRecords(Patients patients);
+
     public List<Records> GetAllRecords();
+
+    public void addRecords(Records records);
+    
+    public void UpdateRecords(Records record);
+    
+    public Records GetRecordsById(int recordsId);
 }

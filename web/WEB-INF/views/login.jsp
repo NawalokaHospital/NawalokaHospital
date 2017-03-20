@@ -25,7 +25,7 @@
         <link href="<c:url value="/assets/mod1/css/orange.css"/>" rel="stylesheet" type="text/css" media="screen"/>        <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
         <!-- CORE CSS TEMPLATE - START -->
         <link href="<c:url value="/assets/mod1/css/style.css"/>" rel="stylesheet" type="text/css"/>
-        <link href="<c:url value="/assets/mod1/css/responsive.css"/>" rel="stylesheet" type="text/css"/>
+        <link href="<c:url value="/assets/mod1/css/responsive.css"/>" rel="stylesheet" type="text/css"/>        
     </head>      
 
     <body class=" login_page">
@@ -56,9 +56,13 @@
                             <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
                     </p>
 
+                    <p>
+                        <label for="user_login">Conform Password<br />                           
+                            <input type="text"  id="conpassword" class="input" value="" /></label>
+                    </p>
 
                     <p class="submit">
-                        <input type="submit" name="wp-submit" id="wp-submit" class="btn btn-orange btn-block" value="Submit" />
+                        <input type="submit" name="wp-submit" id="buttonsubmit" class="btn btn-orange btn-block" value="Submit" />
                     </p>
 
                 </form:form>
@@ -68,20 +72,26 @@
             </div>
         </div>
 
+
+        <!-- CORE JS FRAMEWORK - START --> 
+        <script src="<c:url value="/assets/mod1/js/jquery-1.11.2.min.js"/>" type="text/javascript"></script> 
+        <script>
+                    $(document).ready(function () {
+                        $('#buttonsubmit').attr("disabled", "disabled");
+                    };
+        </script>
+        <script src="<c:url value="/assets/mod1/js/jquery.easing.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="/assets/mod1/js/bootstrap.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="/assets/mod1/js/pace.min.js"/>" type="text/javascript"></script>  
+        <script src="<c:url value="/assets/mod1/js/perfect-scrollbar.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="/assets/mod1/js/viewportchecker.js"/>" type="text/javascript"></script>  
+        <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
+        <script src="<c:url value="/assets/mod1/js/icheck.min.js"/>" type="text/javascript"></script><!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
+        <!-- CORE TEMPLATE JS - START --> 
+        <script src="<c:url value="/assets/mod1/js/scripts.js"/>" type="text/javascript"></script>  
+        <!-- Sidebar Graph - START --> 
+        <script src="<c:url value="/assets/mod1/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
+        <script src="<c:url value="/assets/mod1/js/chart-sparkline.js"/>" type="text/javascript"></script>        
     </body>
-    <!-- CORE JS FRAMEWORK - START --> 
-    <script src="<c:url value="/assets/mod1/js/jquery-1.11.2.min.js"/>" type="text/javascript"></script> 
-    <script src="<c:url value="/assets/mod1/js/jquery.easing.min.js"/>" type="text/javascript"></script> 
-    <script src="<c:url value="/assets/mod1/js/bootstrap.min.js"/>" type="text/javascript"></script> 
-    <script src="<c:url value="/assets/mod1/js/pace.min.js"/>" type="text/javascript"></script>  
-    <script src="<c:url value="/assets/mod1/js/perfect-scrollbar.min.js"/>" type="text/javascript"></script> 
-    <script src="<c:url value="/assets/mod1/js/viewportchecker.js"/>" type="text/javascript"></script>  
-    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
-    <script src="<c:url value="/assets/mod1/js/icheck.min.js"/>" type="text/javascript"></script><!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
-    <!-- CORE TEMPLATE JS - START --> 
-    <script src="<c:url value="/assets/mod1/js/scripts.js"/>" type="text/javascript"></script>  
-    <!-- Sidebar Graph - START --> 
-    <script src="<c:url value="/assets/mod1/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
-    <script src="<c:url value="/assets/mod1/js/chart-sparkline.js"/>" type="text/javascript"></script>
 </html>
 

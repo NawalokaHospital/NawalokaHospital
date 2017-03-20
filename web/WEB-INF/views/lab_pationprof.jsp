@@ -207,7 +207,9 @@
                                 First Name: <input style="text-align: center" disabled="disabled" type="text" value='${patientinfo.patientFirstname}'/><br><br>
                                 Last Name: <input style="text-align: center" disabled="disabled" type="text" value='${patientinfo.patientLastname}'/><br><br>                                                                
                                 Create Date: <input style="text-align: center" disabled="disabled" type="text" value='${patientinfo.patientCreatedDate}'/><br><br>
-                                Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${patirec.recordFrequency}'/><br><br>
+                                Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${patirec.recordFrequency}'/><br><br>                             
+                                Test Image:<br>
+                                <img src="<c:url value="/assets/uplodeimade/${patirec.recordImage}"/>">
                             </div>
                             <div class="col-md-6">
                                 <div style="max-width: 650px; margin: auto; padding-top: 40px">
@@ -219,7 +221,7 @@
                                     <form id="upload-image-form" action="uploadimage" method="post" enctype="multipart/form-data">                                        
                                         <div class="form-group">  
                                             <input type="hidden" name="recodid" value="${patirec.recordId}"/>
-                                             <input type="hidden" name="patientid" value="${patientinfo.patientId}"/>
+                                            <input type="hidden" name="patientid" value="${patientinfo.patientId}"/>
                                             <input type="file" name="image" id="file" required>
                                         </div>
                                         <button class="btn btn-lg btn-primary" id="upload-button" type="submit" >Upload image</button>

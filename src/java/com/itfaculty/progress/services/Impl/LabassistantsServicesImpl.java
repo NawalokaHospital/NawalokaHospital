@@ -41,4 +41,10 @@ public class LabassistantsServicesImpl implements LabassistantsServices {
         return LabassistantsDao.GetAllLabassistants();
     }
 
+    @Transactional
+    @Override
+    public Labassistants GetLabDataByID(int labId) {
+        return LabassistantsDao.GetLabDataByID(labId);
+    }
+
 }

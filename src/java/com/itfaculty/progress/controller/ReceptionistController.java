@@ -14,6 +14,9 @@ import com.itfaculty.progress.services.DoctorsServices;
 import com.itfaculty.progress.services.LabassistantsServices;
 import com.itfaculty.progress.services.PatientsServices;
 import com.itfaculty.progress.services.RecordsServices;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -65,8 +68,6 @@ public class ReceptionistController {
         if (record != null) {
             map.addAttribute("record", record);
         }
-
-        System.out.println(val + "*****");
         List<Doctors> all = doctorsServices.GetAllDoctor();
         List<Labassistants> alllab = labassistantsServices.GetAllLabassistants();
         map.addAttribute("docall", all);
@@ -82,5 +83,44 @@ public class ReceptionistController {
         System.out.println(addrecord.getLabId());
         System.out.println(addrecord.getPatientId());
         return "redirect:" + "recep_pationprof?user_name=" + addrecord.getPatientId();
+    }
+
+    @RequestMapping(value = {"/saverecord"}, method = RequestMethod.POST)
+    public String SaveRecode(Addrecord addrec, ModelMap map) {
+        Doctors doc = doctorsServices.GetDoctorById(addrec.getDoctorID());
+        Labassistants lab = labassistantsServices.GetLabDataByID(addrec.getLabId());
+        Patients pat = patientsServices.GetPatients(addrec.getPatientId());
+        if (doc != null && lab != null && pat != null) {
+            Date yourDate = new Date();
+            Records rec = new Records();
+            rec.setDoctors(doc);
+            rec.setLabassistants(lab);
+            rec.setPatients(pat);
+            rec.setRecordCreatedDate(yourDate);
+            try {
+                recordsServices.addRecords(rec);
+            } catch (Exception e) {
+            }
+            return "redirect:" + "recep_pationprof?user_name=" + addrec.getPatientId();
+        } else {
+            return "redirect:" + "recep_pationprof?user_name=" + addrec.getPatientId();
+        }
+    }
+
+    @RequestMapping(value = {"/recep_addpation"}, method = RequestMethod.GET)
+    public String AddPation(ModelMap map) {
+        Patients pat = new Patients();
+        map.addAttribute("pation", pat);
+        return "recep_addpation";
+    }
+
+    @RequestMapping(value = {"/recep_addpation"}, method = RequestMethod.POST)
+    public String SavePation(Patients pation, ModelMap map) {
+        Date yourDate = new Date();
+        pation.setPatientCreatedDate(yourDate);
+        patientsServices.AddPatient(pation);
+        Patients pat = new Patients();
+        map.addAttribute("pation", pat);
+        return "recep_addpation";
     }
 }

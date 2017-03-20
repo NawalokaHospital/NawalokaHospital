@@ -16,7 +16,6 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
 @Repository("labassistantsDao")
 public class LabassistantsDaoImpl implements LabassistantsDao {
 
@@ -43,6 +42,14 @@ public class LabassistantsDaoImpl implements LabassistantsDao {
     public List<Labassistants> GetAllLabassistants() {
         List<Labassistants> list = sessionFactory.getCurrentSession().createCriteria(Labassistants.class).list();
         return list;
+    }
+
+    @Override
+    public Labassistants GetLabDataByID(int labId) {
+        Criteria cr = sessionFactory.getCurrentSession().createCriteria(Labassistants.class);
+        cr.add(Restrictions.eq("labassistantId", labId));
+        Labassistants result = (Labassistants) cr.uniqueResult();
+        return result;
     }
 
 }

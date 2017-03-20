@@ -38,4 +38,10 @@ public class PatientsServicesImpl implements PatientsServices {
         return patientsDao.loginPatient(patients);
     }
 
+    @Transactional
+    @Override
+    public void AddPatient(Patients patients) {
+        patientsDao.AddPatient(patients);
+    }
+
 }

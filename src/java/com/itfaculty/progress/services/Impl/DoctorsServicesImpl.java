@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 @Service("doctorsServices")
 public class DoctorsServicesImpl implements DoctorsServices {
 
@@ -36,6 +35,12 @@ public class DoctorsServicesImpl implements DoctorsServices {
     @Override
     public List<Doctors> GetAllDoctor() {
         return doctorsDao.GetAllDoctor();
+    }
+
+    @Transactional
+    @Override
+    public Doctors GetDoctorById(int doctoreID) {
+        return doctorsDao.GetDoctorById(doctoreID);
     }
 
 }

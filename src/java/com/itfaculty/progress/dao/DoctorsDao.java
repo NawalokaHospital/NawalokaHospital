@@ -16,4 +16,6 @@ public interface DoctorsDao {
     public Doctors logindoctor(Doctors doctors);
     
     public List<Doctors> GetAllDoctor();
+    
+    public Doctors GetDoctorById(int doctoreID);
 }

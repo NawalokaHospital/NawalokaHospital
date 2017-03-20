@@ -17,7 +17,6 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
 @Repository("patientsDao")
 public class PatientsDaoImpl implements PatientsDao {
 
@@ -52,6 +51,11 @@ public class PatientsDaoImpl implements PatientsDao {
         cr.add(andExp);
         Patients result = (Patients) cr.uniqueResult();
         return result;
+    }
+
+    @Override
+    public void AddPatient(Patients patients) {
+        sessionFactory.getCurrentSession().save(patients);
     }
 
 }

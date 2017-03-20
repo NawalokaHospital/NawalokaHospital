@@ -8,12 +8,13 @@ package com.itfaculty.progress.services;
 import com.itfaculty.progress.model.Doctors;
 import java.util.List;
 
-
 public interface DoctorsServices {
 
     public void addDoctors(Doctors doctors);
-    
+
     public Doctors logindoctor(Doctors doctors);
-    
+
     public List<Doctors> GetAllDoctor();
+
+    public Doctors GetDoctorById(int doctoreID);
 }

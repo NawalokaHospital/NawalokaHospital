@@ -182,7 +182,7 @@
                         </li>
 
                         <li class="">
-                            <a href="javascript:;">
+                            <a href="recep_addpation">
 
                                 <span class="title">Patient Profile</span>
                                 <span class="arrow "></span>
@@ -284,10 +284,10 @@
                                     Gender: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientGender}'/><br><br>
                                     Age: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientAge}'/><br><br>
                                     Create Date: <input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientCreatedDate}'/><br><br>
-                                    <form:form method="POST" modelAttribute="addrec"> 
-                                        <form:input type="hidden" path="patientId" id="patientId" value="${pdata.patientId}"/>
-                                        Lab Id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <form:input style="text-align: center" type="text" path="labId" id="labId" value='${record.labassistants.labassistantId}' /><br><br>
-                                        Doctor Id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<form:input style="text-align: center" type="text" path="doctorID" id="doctorID" value='${record.doctors.doctorId}'/><br><br>
+                                    <form:form method="POST" action="saverecord" modelAttribute="addrec"> 
+                                        <form:input type="hidden" path="patientId" id="patientId" value="${pdata.patientId}"/>                                        
+                                        Lab Id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <form:input style="text-align: center" type="number" path="labId" id="labId" value='${record.labassistants.labassistantId}' /><br><br>
+                                        Doctor Id: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<form:input style="text-align: center" type="number" path="doctorID" id="doctorID" value='${record.doctors.doctorId}'/><br><br>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" class='btn-primary' value="Submit" type="submit"/>
                                     </form:form>
                                 </div>

@@ -19,4 +19,6 @@ public interface LabassistantsDao {
     public Labassistants loginLabassistants(Labassistants labassistants);
     
     public List<Labassistants> GetAllLabassistants();
+    
+     public Labassistants GetLabDataByID(int labId);
 }

@@ -177,7 +177,7 @@
                         </li>
 
                         <li class="">
-                            <a href="javascript:;">
+                            <a href="recep_addpation">
 
                                 <span class="title">Patient Registration</span>
                                 <span class="arrow "></span>
@@ -219,6 +219,7 @@
 
                             </ul>
                         </li>
+                    </ul>
                 </div>
                 <!-- MAIN MENU - END -->
 
@@ -359,7 +360,7 @@
                             $('#tdatapatient').html("");
                             if (data.length !== 0) {
                                 $.each(data, function (index, patient) {
-                                    $('#tdatapatient').html("<tr> ");
+                                    $('#tdatapatient').append("<tr> ");
                                     $('#tdatapatient').append("<th>" + patient.patientNicid + "</th>");
                                     $('#tdatapatient').append("<th>" + patient.patientFirstname + "</th>");
                                     $('#tdatapatient').append("<th>" + patient.patientAge + "</th>");

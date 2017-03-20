@@ -15,7 +15,6 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
 @Repository("recordsDao")
 public class RecordsDaoImpl implements RecordsDao {
 
@@ -32,6 +31,24 @@ public class RecordsDaoImpl implements RecordsDao {
     public Records GetRecords(Patients patients) {
         Criteria cr = sessionFactory.getCurrentSession().createCriteria(Records.class);
         cr.add(Restrictions.eq("patients", patients));
+        Records result = (Records) cr.uniqueResult();
+        return result;
+    }
+
+    @Override
+    public void addRecords(Records records) {
+        sessionFactory.getCurrentSession().save(records);
+    }
+
+    @Override
+    public void UpdateRecords(Records record) {
+        sessionFactory.getCurrentSession().update(record);
+    }
+
+    @Override
+    public Records GetRecordsById(int recordsId) {
+        Criteria cr = sessionFactory.getCurrentSession().createCriteria(Records.class);
+        cr.add(Restrictions.eq("recordId", recordsId));
         Records result = (Records) cr.uniqueResult();
         return result;
     }
