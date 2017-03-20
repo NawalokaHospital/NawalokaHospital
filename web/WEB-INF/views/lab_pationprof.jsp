@@ -169,7 +169,6 @@
 
                             </ul>
                         </li>
-                        </li>
                 </div>
                 <!-- MAIN MENU - END -->
 
@@ -215,17 +214,17 @@
                                     <h1 class="page-header">Test Image Upload Form</h1>
                                     <p class="lead">Select a PNG or JPEG image, having maximum size <span id="max-size"></span> 500KB.</p>
 
-                                    <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
-                                        <div id="image-preview-div" style="display: none">
-                                            <label for="exampleInputFile">Selected image:</label>
-                                            <br>
-                                            <img id="preview-img" src="noimage">
+
+
+                                    <form id="upload-image-form" action="uploadimage" method="post" enctype="multipart/form-data">                                        
+                                        <div class="form-group">  
+                                            <input type="hidden" name="recodid" value="${patirec.recordId}"/>
+                                             <input type="hidden" name="patientid" value="${patientinfo.patientId}"/>
+                                            <input type="file" name="image" id="file" required>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="file" name="file" id="file" required>
-                                        </div>
-                                        <button class="btn btn-lg btn-primary" id="upload-button" type="submit" disabled>Upload image</button>
+                                        <button class="btn btn-lg btn-primary" id="upload-button" type="submit" >Upload image</button>
                                     </form>
+
 
                                     <br>
                                     <div class="alert alert-info" id="loading" style="display: none;" role="alert">
@@ -249,37 +248,32 @@
 
 
             </section>
-        </div>
 
 
 
-    </section>
-</section>
-</div>
-<script>
-
-</script>
-
-<!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
+        </section>
 
 
-<!-- CORE JS FRAMEWORK - START --> 
-<script src="<c:url value="/assets/mod4/js/jquery-1.11.2.min.js"/>" type="text/javascript"></script> 
-<script src="<c:url value="/assets/mod4/js/jquery.easing.min.js"/>" type="text/javascript"></script> 
-<script src="<c:url value="/assets/mod4/js/bootstrap.min.js"/>" type="text/javascript"></script> 
-<script src="<c:url value="/assets/mod4/js/pace.min.js"/>" type="text/javascript"></script>  
-<script src="<c:url value="/assets/mod4/js/perfect-scrollbar.min.js"/>" type="text/javascript"></script> 
-<script src="<c:url value="/assets/mod4/js/viewportchecker.js"/>" type="text/javascript"></script>  
-<!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
-<script src="<c:url value="/assets/mod4/js/icheck.min.js"/>" type="text/javascript"></script><!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
-<!-- CORE TEMPLATE JS - START --> 
-<script src="<c:url value="/assets/mod4/js/scripts.js"/>" type="text/javascript"></script>  
-<!-- Sidebar Graph - START --> 
-<script src="<c:url value="/assets/mod4/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
-<script src="<c:url value="/assets/mod4/js/chart-sparkline.js"/>" type="text/javascript"></script>
+        <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
 
-<script src="<c:url value="/assets/mod4/js/autosize.min.js"/>" type="text/javascript"></script>
-<script src="<c:url value="/assets/mod4/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
+
+        <!-- CORE JS FRAMEWORK - START --> 
+        <script src="<c:url value="/assets/mod4/js/jquery-1.11.2.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="/assets/mod4/js/jquery.easing.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="/assets/mod4/js/bootstrap.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="/assets/mod4/js/pace.min.js"/>" type="text/javascript"></script>  
+        <script src="<c:url value="/assets/mod4/js/perfect-scrollbar.min.js"/>" type="text/javascript"></script> 
+        <script src="<c:url value="/assets/mod4/js/viewportchecker.js"/>" type="text/javascript"></script>  
+        <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
+        <script src="<c:url value="/assets/mod4/js/icheck.min.js"/>" type="text/javascript"></script><!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
+        <!-- CORE TEMPLATE JS - START --> 
+        <script src="<c:url value="/assets/mod4/js/scripts.js"/>" type="text/javascript"></script>  
+        <!-- Sidebar Graph - START --> 
+        <script src="<c:url value="/assets/mod4/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
+        <script src="<c:url value="/assets/mod4/js/chart-sparkline.js"/>" type="text/javascript"></script>
+
+        <script src="<c:url value="/assets/mod4/js/autosize.min.js"/>" type="text/javascript"></script>
+        <script src="<c:url value="/assets/mod4/js/jquery.sparkline.min.js"/>" type="text/javascript"></script>
 
 
 
@@ -289,28 +283,28 @@
 
 
 
-<!-- General section box modal start -->
-<div class="modal" id="section-settings" tabindex="-1" role="dialog" aria-labelledby="ultraModal-Label" aria-hidden="true">
-    <div class="modal-dialog animated bounceInDown">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Section Settings</h4>
-            </div>
-            <div class="modal-body">
+        <!-- General section box modal start -->
+        <div class="modal" id="section-settings" tabindex="-1" role="dialog" aria-labelledby="ultraModal-Label" aria-hidden="true">
+            <div class="modal-dialog animated bounceInDown">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Section Settings</h4>
+                    </div>
+                    <div class="modal-body">
 
-                Body goes here...
+                        Body goes here...
 
-            </div>
-            <div class="modal-footer">
-                <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-                <button class="btn btn-success" type="button">Save changes</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                        <button class="btn btn-success" type="button">Save changes</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- modal end -->
-</body>
+        <!-- modal end -->
+    </body>
 </html>
 
 
