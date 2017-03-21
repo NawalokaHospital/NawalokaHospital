@@ -191,7 +191,7 @@
 
                         <div class="pull-left">
                             <h1 class="title">Labassistant main page</h1>                 
-                        </div>                           
+                        </div>  
                         <div class="pull-right">
                             <ul>
                                 <li>
@@ -205,53 +205,43 @@
 
                 <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
                     <section class="box ">
-
-                        <div class="col-md-12">
-                            <div class="col-md-6">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6" style="padding-left: 6%">
+                            <div class="col-md-12">
                                 <h4>Welcome to Patient Profile</h4>
                                 <h2> Test Reports</h2> <br>
                                 First Name: <input style="text-align: center" disabled="disabled" type="text" value='${patientinfo.patientFirstname}'/><br><br>
                                 Last Name: <input style="text-align: center" disabled="disabled" type="text" value='${patientinfo.patientLastname}'/><br><br>                                                                
                                 Create Date: <input style="text-align: center" disabled="disabled" type="text" value='${patientinfo.patientCreatedDate}'/><br><br>
-                                Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${patirec.recordFrequency}'/><br><br>                             
-                                Test Image:<br>
-                                <img src="<c:url value="/assets/uplodeimade/${patirec.recordImage}"/>">
-                            </div>
-                            <div class="col-md-6">
-                                <div style="max-width: 650px; margin: auto; padding-top: 40px">
-                                    <h1 class="page-header">Test Image Upload Form</h1>
-                                    <p class="lead">Select a PNG or JPEG image, having maximum size <span id="max-size"></span> 500KB.</p>
+                                Record Create Date: <input style="text-align: center" disabled="disabled" type="text" value='${patirec.recordCreatedDate}'/><br><br>
+                                <form:form method="POST" action="saverecorddoc" modelAttribute="addrecdoc">
+                                    <input type="hidden" id="recordId" name="recordId" value="${patirec.recordId}"/>
+                                    Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <c:choose>
+                                        <c:when test="${empty patirec.recordFrequency}">
+                                            <select id="type" name="type">
+                                                <c:forEach var="testtype" items="${addrecdoc.testtype}">
+                                                    <option value="${testtype}">${testtype}</option>
+                                                </c:forEach>
+                                            </select> <br><br>                                       
+                                        </c:when>
+                                        <c:otherwise>
+                                            <input style="text-align: center" disabled="disabled" type="text" value='${patirec.recordFrequency}'/><br><br>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    Test Image:<br>
+                                    <img src="<c:url value="/assets/uplodeimade/${patirec.recordImage}"/>"><br><br>
+                                    Description:<br>
+                                    <form:textarea type="" id="discription" name="discription" path="discription"/>
 
-
-
-                                    <form id="upload-image-form" action="uploadimage" method="post" enctype="multipart/form-data">                                        
-                                        <div class="form-group">  
-                                            <input type="hidden" name="recodid" value="${patirec.recordId}"/>
-                                            <input type="hidden" name="patientid" value="${patientinfo.patientId}"/>
-                                            <input type="file" name="image" id="file" required>
-                                        </div>
-                                        <button class="btn btn-lg btn-primary" id="upload-button" type="submit" >Upload image</button>
-                                    </form>
-
-
-                                    <br>
-                                    <div class="alert alert-info" id="loading" style="display: none;" role="alert">
-                                        Uploading image...
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div id="message"></div>
-                                </div>
-                            </div>
-
+                                    <p class="submit">
+                                        <input type="submit" style="width: 40%" name="wp-submit" id="wp-submit" class="btn btn-orange btn-block" value="Save" />
+                                    </p>
+                                </form:form>
+                            </div>                            
+                            <div class="col-md-3"></div>
                         </div>
-
-
-
-
+                    </section>
                 </div>
 
 

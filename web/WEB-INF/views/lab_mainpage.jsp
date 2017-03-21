@@ -19,7 +19,7 @@
         <meta content="" name="description" />
         <meta content="" name="author" />
 
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="shortcut icon" href="<c:url value="/assets/mod2/images/favicon.png"/>" type="image/x-icon" />    <!-- Favicon -->
         <!-- CORE CSS FRAMEWORK - START -->
         <link href="<c:url value="/assets/mod2/css/pace-theme-flash.css"/>" rel="stylesheet" type="text/css" media="screen"/>
@@ -153,7 +153,7 @@
                             <ul class="sub-menu" style='display:block;'>
                             </ul>
                         </li>
-                       
+
 
                         <li class="">
                             <a href="javascript:;">
@@ -185,31 +185,31 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
-                    
-                   
+
+
                     <div style="margin-left: 40%;">
-                        
+
                         <form:form method="POST" modelAttribute="logdata">    
 
-                    <p>
-                        <label for="user_login">Patient UserName<br />
-                            <form:input path="username" id="username"/>
-                            <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
-                    </p>
+                            <p>
+                                <label for="user_login">Patient UserName<br />
+                                    <form:input path="username" id="username"/>
+                                    <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
+                            </p>
 
-                    <p>
-                        <label for="user_login">Patient Password<br />
-                            <form:input type="password" path="password" id="password" class="input"/>
-                            <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
-                    </p>
+                            <p>
+                                <label for="user_login">Patient Password<br />
+                                    <form:input type="password" path="password" id="password" class="input"/>
+                                    <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
+                            </p>
 
 
-                    <p class="submit">
-                        <input style="width: 20%;" type="submit" name="wp-submit" id="wp-submit" class="btn btn-orange btn-block" value="Submit" />
-                    </p>
+                            <p class="submit">
+                                <input style="width: 20%;" type="submit" name="wp-submit" id="wp-submit" class="btn btn-orange btn-block" value="Submit" />
+                            </p>
 
-                </form:form>
-                        
+                        </form:form>
+
                     </div>
 
 
