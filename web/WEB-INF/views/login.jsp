@@ -58,7 +58,7 @@
 
                     <p>
                         <label for="user_login">Conform Password<br />                           
-                            <input type="text"  id="conpassword" class="input" value="" /></label>
+                            <input type="password"  id="conpassword" class="input" value="" /></label>
                     </p>
 
                     <p class="submit">
@@ -78,7 +78,14 @@
         <script>
                     $(document).ready(function () {
                         $('#buttonsubmit').attr("disabled", "disabled");
-                    };
+                    });
+                    $("#conpassword").keyup(function () {
+                        var pass = $('#password').val();
+                        var passconf = $('#conpassword').val();
+                        if (pass === passconf) {
+                            $('#buttonsubmit').attr("disabled", false);
+                        }
+                    });
         </script>
         <script src="<c:url value="/assets/mod1/js/jquery.easing.min.js"/>" type="text/javascript"></script> 
         <script src="<c:url value="/assets/mod1/js/bootstrap.min.js"/>" type="text/javascript"></script> 
