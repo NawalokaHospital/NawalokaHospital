@@ -12,7 +12,7 @@
 <html>
     <head>
 
-      
+
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="shortcuticon" href="<c:url value="/assets/mod4/images/favicon.png"/>" type="image/x-icon" />    <!-- Favicon -->
@@ -53,9 +53,9 @@
             }
         </style>
     </head>
- 
+
     <body class=" ">
-     
+
         <div class='page-topbar '>
             <div class='logo-area'>
 
@@ -79,8 +79,8 @@
                                 <span style="color: black">UserName : <%=val%> <i class="fa fa-angle-down"></i></span>
                             </a>
                             <ul class="dropdown-menu profile animated fadeIn">
-                               
-                             
+
+
                                 <li class="last">
                                     <a href="logout">
                                         <i class="fa fa-lock"></i>
@@ -140,7 +140,7 @@
                             <ul class="sub-menu" style='display:block;'>
                             </ul>
                         </li>
-                       
+
                         <li class="">
                             <a href="doc_pationhistry?pationId=${patientinfo.patientId}" class="list-group-item active">Patient History </a>
                             <ul class="sub-menu" >
@@ -148,7 +148,7 @@
                             </ul>
                         </li>
                 </div>
-                
+
 
 
 
@@ -194,7 +194,8 @@
                                 Record Create Date: <input style="text-align: center" disabled="disabled" type="text" value='${patirec.recordCreatedDate}'/><br><br>
                                 <form:form method="POST" action="saverecorddoc" modelAttribute="addrecdoc">
                                     <input type="hidden" id="recordId" name="recordId" value="${patirec.recordId}"/>
-                                    Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="hidden" id="patId" name="patId" value="${patientinfo.patientId}"/>
+                                    Type: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                                                                                            
                                     <c:choose>
                                         <c:when test="${empty patirec.recordFrequency}">
                                             <select id="type" name="type">
@@ -207,10 +208,35 @@
                                             <input style="text-align: center" disabled="disabled" type="text" value='${patirec.recordFrequency}'/><br><br>
                                         </c:otherwise>
                                     </c:choose>
-                                    Test Image:<br>
-                                    <img src="<c:url value="/assets/uplodeimade/${patirec.recordImage}"/>"><br><br>
+
                                     Description:<br>
-                                    <form:textarea type="" id="discription" name="discription" path="discription"/>
+                                    <c:choose>
+                                        <c:when test="${empty patirec.recordCondition}">                                            
+                                            <form:textarea name="discriptiontype" path="discriptiontype"/><br>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <textarea disabled="disabled">${patirec.recordCondition}</textarea><br>
+                                        </c:otherwise>
+                                    </c:choose>
+
+                                    <c:choose>
+                                        <c:when test="${empty patirec.recordImage}">
+                                        </c:when>
+                                        <c:otherwise>
+                                            Test Image:<br>
+                                            <img src="<c:url value="/assets/uplodeimade/${patirec.recordImage}"/>"><br><br>
+
+                                            Description:<br>
+                                            <c:choose>
+                                                <c:when test="${empty patirec.recordResultPrescription}">                                            
+                                                    <form:textarea name="discription" path="discription"/><br>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <textarea disabled="disabled">${patirec.recordResultPrescription}</textarea><br>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:otherwise>
+                                    </c:choose>
 
                                     <p class="submit">
                                         <input type="submit" style="width: 40%" name="wp-submit" id="wp-submit" class="btn btn-orange btn-block" value="Save" />

@@ -8,7 +8,9 @@ package com.itfaculty.progress.model;
 public class AddrecordDoc {
 
     private int recordId;
+    private int patId;
     private String type;
+    private String discriptiontype;
     private String discription;
     private String[] testtype = {"One", "Two", "Three"};
 
@@ -66,6 +68,34 @@ public class AddrecordDoc {
      */
     public void setTesttype(String[] testtype) {
         this.testtype = testtype;
+    }
+
+    /**
+     * @return the discriptiontype
+     */
+    public String getDiscriptiontype() {
+        return discriptiontype;
+    }
+
+    /**
+     * @param discriptiontype the discriptiontype to set
+     */
+    public void setDiscriptiontype(String discriptiontype) {
+        this.discriptiontype = discriptiontype;
+    }
+
+    /**
+     * @return the patId
+     */
+    public int getPatId() {
+        return patId;
+    }
+
+    /**
+     * @param patId the patId to set
+     */
+    public void setPatId(int patId) {
+        this.patId = patId;
     }
 
 }

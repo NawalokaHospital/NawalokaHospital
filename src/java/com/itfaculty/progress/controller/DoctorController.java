@@ -62,22 +62,29 @@ public class DoctorController {
     @RequestMapping(value = {"/saverecorddoc"}, method = RequestMethod.POST)
     public String SaveDoctorPatientProfPage(ModelMap map, AddrecordDoc addrecdoc) {
         Records datarec = recordsServices.GetRecordsById(addrecdoc.getRecordId());
-        datarec.setRecordFrequency(addrecdoc.getType());
-        datarec.setRecordResultPrescription(addrecdoc.getDiscription());
+        if (datarec.getRecordFrequency() == null) {
+            datarec.setRecordFrequency(addrecdoc.getType());
+        }
+        if (datarec.getRecordCondition() == null) {
+            datarec.setRecordCondition(addrecdoc.getDiscriptiontype());
+        }
+        if (datarec.getRecordResultPrescription() == null) {
+            datarec.setRecordResultPrescription(addrecdoc.getDiscription());
+        }
         recordsServices.UpdateRecords(datarec);
-        return "redirect:" + "doc_pationprof?patId=" + 3;
+        return "redirect:" + "doc_pationprof?patId=" + addrecdoc.getPatId();
     }
 
     @RequestMapping(value = {"/doc_pationhistry"}, method = RequestMethod.GET)
     public String LoaPationHistryDoctorPatientProfPage(ModelMap map, int pationId) {
         System.out.println("****" + pationId);
-        
-               // System.out.println(patId + "************");
+
+        // System.out.println(patId + "************");
         Patients val = patientsServices.GetPatients(pationId);
         Records recd = recordsServices.GetRecords(val);
         map.addAttribute("patientinfo", val);
         map.addAttribute("patirec", recd);
-       
+
         return "doc_pationhistry";
     }
 
