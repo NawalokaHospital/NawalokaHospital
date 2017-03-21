@@ -11,18 +11,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- 
-         * @Package: Ultra Admin - Responsive Theme
-         * @Subpackage: Bootstrap
-         * @Version: 2.0
-         * This file is part of Ultra Admin Theme.
-        -->
-        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-        <meta charset="utf-8" />
-        <title>Ultra Admin : Form Elements</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta content="" name="description" />
-        <meta content="" name="author" />
+      
+       
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="shortcuticon" href="<c:url value="/assets/mod4/images/favicon.png"/>" type="image/x-icon" />    <!-- Favicon -->

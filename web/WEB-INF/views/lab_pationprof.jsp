@@ -86,24 +86,7 @@
                                 <span style="color: black">UserName : <%=val%> <i class="fa fa-angle-down"></i></span>
                             </a>
                             <ul class="dropdown-menu profile animated fadeIn">
-                                <li>
-                                    <a href="#settings">
-                                        <i class="fa fa-wrench"></i>
-                                        Settings
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#profile">
-                                        <i class="fa fa-user"></i>
-                                        Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#help">
-                                        <i class="fa fa-info"></i>
-                                        Help
-                                    </a>
-                                </li>
+                             
                                 <li class="last">
                                     <a href="logout">
                                         <i class="fa fa-lock"></i>

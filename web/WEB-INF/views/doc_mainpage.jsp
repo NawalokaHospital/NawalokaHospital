@@ -71,24 +71,8 @@
                                 <span style="color: black">UserName : <%=val%> <i class="fa fa-angle-down"></i></span>
                             </a>
                             <ul class="dropdown-menu profile animated fadeIn">
-                                <li>
-                                    <a href="#settings">
-                                        <i class="fa fa-wrench"></i>
-                                        Settings
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#profile">
-                                        <i class="fa fa-user"></i>
-                                        Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#help">
-                                        <i class="fa fa-info"></i>
-                                        Help
-                                    </a>
-                                </li>
+                            
+                            
                                 <li class="last">
                                     <a href="logout">
                                         <i class="fa fa-lock"></i>
@@ -118,7 +102,7 @@
 
                         <div class="profile-image col-md-4 col-sm-4 col-xs-4">
                             <a href="ui-profile.html">
-                                <img src="https://cdn2.iconfinder.com/data/icons/medicine-9/512/hospital-512.png" class="img-responsive img-circle" style="background-color: white">
+                                <img src="assets/mod2/images/naw.png" class="img-responsive img-circle" style="background-color: white">
                             </a>
                         </div>
 
@@ -142,67 +126,18 @@
 
 
 
-                        <li class="open">
-                            <a href="javascript:;">
-
-                                <span class="title">Patient Registration</span>
-                                <span class="arrow open"></span>
-                            </a>
-                            <ul class="sub-menu" style='display:block;'>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">Patient Information</span>
-                                <span class="arrow "></span>
-                            </a>
-
-                        </li>
-
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">Patient Profile</span>
-                                <span class="arrow "></span>
-                            </a>
-                            <ul class="sub-menu" >
-
-                            </ul>
-                        </li>
-
-
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">Add New User</span>
-                                <span class="arrow "></span>
-                            </a>
-
-                        </li>
-
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">User Information</span>
-                                <span class="arrow "></span>
-                            </a>
-
-                        </li>
+                       
+                        
+                    </ul>
+                     
 
 
 
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">Upload Report</span>
-                                <span class="arrow "></span>
-                            </a>
-                            <ul class="sub-menu" >
+                   
 
 
-                            </ul>
-                        </li>
+
+                       
                 </div>
                 <!-- MAIN MENU - END -->
 
@@ -217,16 +152,18 @@
 
             <!-- START CONTENT -->
             <section id="main-content" class=" ">
-                <section class="wrapper" style='margin-top:60px;display:inline-block;width:100%;padding:15px 0 0 15px;'>
+                <section class="wrapper" style='margin-top:60px;display:inline-block;width:100%;padding:50px 0 0 15px;'>
 
                     <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'>
                         <div class="page-title">
 
                             <div class="pull-left">
-                                <h1 class="title">Editors</h1>                            </div>
+                                <h1 class="title">Patient login</h1>                            </div>
                         </div>
                     </div>
-                    <div class="clearfix"></div>                    
+                    <div class="clearfix"></div> 
+                    
+                    <br/>
 
                     <div class="col-lg-12">
                         <div style="margin-left: 40%;">
@@ -260,207 +197,7 @@
 
         </div>
 
-        <div class="content-body">
-            <div class="row">
-                <div class="col-md-8 col-sm-9 col-xs-10">
-
-                    <!-- END CONTENT -->
-                    <div class="page-chatapi hideit">
-
-                        <div class="search-bar">
-                            <input type="text" placeholder="Search" class="form-control">
-                        </div>
-
-                        <div class="chat-wrapper">
-                            <h4 class="group-head">Groups</h4>
-                            <ul class="group-list list-unstyled">
-                                <li class="group-row">
-                                    <div class="group-status available">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                    <div class="group-info">
-                                        <h4><a href="#">Work</a></h4>
-                                    </div>
-                                </li>
-                                <li class="group-row">
-                                    <div class="group-status away">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                    <div class="group-info">
-                                        <h4><a href="#">Friends</a></h4>
-                                    </div>
-                                </li>
-
-                            </ul>
-
-
-                            <h4 class="group-head">Favourites</h4>
-                            <ul class="contact-list">
-
-                                <li class="user-row" id='chat_user_1' data-user-id='1'>
-                                    <div class="user-img">
-                                        <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
-                                    </div>
-                                    <div class="user-info">
-                                        <h4><a href="#">Clarine Vassar</a></h4>
-                                        <span class="status available" data-status="available"> Available</span>
-                                    </div>
-                                    <div class="user-status available">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                </li>
-                                <li class="user-row" id='chat_user_2' data-user-id='2'>
-                                    <div class="user-img">
-                                        <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
-                                    </div>
-                                    <div class="user-info">
-                                        <h4><a href="#">Brooks Latshaw</a></h4>
-                                        <span class="status away" data-status="away"> Away</span>
-                                    </div>
-                                    <div class="user-status away">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                </li>
-                                <li class="user-row" id='chat_user_3' data-user-id='3'>
-                                    <div class="user-img">
-                                        <a href="#"><img src="data/profile/avatar-3.png" alt=""></a>
-                                    </div>
-                                    <div class="user-info">
-                                        <h4><a href="#">Clementina Brodeur</a></h4>
-                                        <span class="status busy" data-status="busy"> Busy</span>
-                                    </div>
-                                    <div class="user-status busy">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                </li>
-
-                            </ul>
-
-
-                            <h4 class="group-head">More Contacts</h4>
-                            <ul class="contact-list">
-
-                                <li class="user-row" id='chat_user_4' data-user-id='4'>
-                                    <div class="user-img">
-                                        <a href="#"><img src="data/profile/avatar-4.png" alt=""></a>
-                                    </div>
-                                    <div class="user-info">
-                                        <h4><a href="#">Carri Busey</a></h4>
-                                        <span class="status offline" data-status="offline"> Offline</span>
-                                    </div>
-                                    <div class="user-status offline">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                </li>
-                                <li class="user-row" id='chat_user_5' data-user-id='5'>
-                                    <div class="user-img">
-                                        <a href="#"><img src="data/profile/avatar-5.png" alt=""></a>
-                                    </div>
-                                    <div class="user-info">
-                                        <h4><a href="#">Melissa Dock</a></h4>
-                                        <span class="status offline" data-status="offline"> Offline</span>
-                                    </div>
-                                    <div class="user-status offline">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                </li>
-                                <li class="user-row" id='chat_user_6' data-user-id='6'>
-                                    <div class="user-img">
-                                        <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
-                                    </div>
-                                    <div class="user-info">
-                                        <h4><a href="#">Verdell Rea</a></h4>
-                                        <span class="status available" data-status="available"> Available</span>
-                                    </div>
-                                    <div class="user-status available">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                </li>
-                                <li class="user-row" id='chat_user_7' data-user-id='7'>
-                                    <div class="user-img">
-                                        <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
-                                    </div>
-                                    <div class="user-info">
-                                        <h4><a href="#">Linette Lheureux</a></h4>
-                                        <span class="status busy" data-status="busy"> Busy</span>
-                                    </div>
-                                    <div class="user-status busy">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                </li>
-                                <li class="user-row" id='chat_user_8' data-user-id='8'>
-                                    <div class="user-img">
-                                        <a href="#"><img src="data/profile/avatar-3.png" alt=""></a>
-                                    </div>
-                                    <div class="user-info">
-                                        <h4><a href="#">Araceli Boatright</a></h4>
-                                        <span class="status away" data-status="away"> Away</span>
-                                    </div>
-                                    <div class="user-status away">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                </li>
-                                <li class="user-row" id='chat_user_9' data-user-id='9'>
-                                    <div class="user-img">
-                                        <a href="#"><img src="data/profile/avatar-4.png" alt=""></a>
-                                    </div>
-                                    <div class="user-info">
-                                        <h4><a href="#">Clay Peskin</a></h4>
-                                        <span class="status busy" data-status="busy"> Busy</span>
-                                    </div>
-                                    <div class="user-status busy">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                </li>
-                                <li class="user-row" id='chat_user_10' data-user-id='10'>
-                                    <div class="user-img">
-                                        <a href="#"><img src="data/profile/avatar-5.png" alt=""></a>
-                                    </div>
-                                    <div class="user-info">
-                                        <h4><a href="#">Loni Tindall</a></h4>
-                                        <span class="status away" data-status="away"> Away</span>
-                                    </div>
-                                    <div class="user-status away">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                </li>
-                                <li class="user-row" id='chat_user_11' data-user-id='11'>
-                                    <div class="user-img">
-                                        <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
-                                    </div>
-                                    <div class="user-info">
-                                        <h4><a href="#">Tanisha Kimbro</a></h4>
-                                        <span class="status idle" data-status="idle"> Idle</span>
-                                    </div>
-                                    <div class="user-status idle">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                </li>
-                                <li class="user-row" id='chat_user_12' data-user-id='12'>
-                                    <div class="user-img">
-                                        <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
-                                    </div>
-                                    <div class="user-info">
-                                        <h4><a href="#">Jovita Tisdale</a></h4>
-                                        <span class="status idle" data-status="idle"> Idle</span>
-                                    </div>
-                                    <div class="user-status idle">
-                                        <i class="fa fa-circle"></i>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-
-                    </div>
-
-
-                    <div class="chatapi-windows ">
-
-
-                    </div>    </div>
-            </div>
-        </div>
+       
         <!-- END CONTAINER -->
         <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
 

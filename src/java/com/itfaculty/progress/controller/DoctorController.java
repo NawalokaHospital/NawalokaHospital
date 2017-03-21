@@ -71,6 +71,13 @@ public class DoctorController {
     @RequestMapping(value = {"/doc_pationhistry"}, method = RequestMethod.GET)
     public String LoaPationHistryDoctorPatientProfPage(ModelMap map, int pationId) {
         System.out.println("****" + pationId);
+        
+               // System.out.println(patId + "************");
+        Patients val = patientsServices.GetPatients(pationId);
+        Records recd = recordsServices.GetRecords(val);
+        map.addAttribute("patientinfo", val);
+        map.addAttribute("patirec", recd);
+       
         return "doc_pationhistry";
     }
 

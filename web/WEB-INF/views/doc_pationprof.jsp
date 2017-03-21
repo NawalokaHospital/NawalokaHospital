@@ -12,12 +12,7 @@
 <html>
     <head>
 
-        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-        <meta charset="utf-8" />
-        <title>Ultra Admin : Form Elements</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta content="" name="description" />
-        <meta content="" name="author" />
+      
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="shortcuticon" href="<c:url value="/assets/mod4/images/favicon.png"/>" type="image/x-icon" />    <!-- Favicon -->
@@ -58,11 +53,9 @@
             }
         </style>
     </head>
-    <!-- END HEAD -->
-
-    <!-- BEGIN BODY -->
+ 
     <body class=" ">
-        <!-- START TOPBAR -->
+     
         <div class='page-topbar '>
             <div class='logo-area'>
 
@@ -82,28 +75,12 @@
                     <ul class="info-menu right-links list-inline list-unstyled">
                         <li class="profile">
                             <a href="#" data-toggle="dropdown" class="toggle">
-                                <img src="<c:url value="/assets/mod2/images/lab.png"/>" alt="user-image" class="img-circle img-inline">
+                                <img src="<c:url value="/assets/mod1/images/avatar-1.png"/>" alt="user-image" class="img-circle img-inline">
                                 <span style="color: black">UserName : <%=val%> <i class="fa fa-angle-down"></i></span>
                             </a>
                             <ul class="dropdown-menu profile animated fadeIn">
-                                <li>
-                                    <a href="#settings">
-                                        <i class="fa fa-wrench"></i>
-                                        Settings
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#profile">
-                                        <i class="fa fa-user"></i>
-                                        Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#help">
-                                        <i class="fa fa-info"></i>
-                                        Help
-                                    </a>
-                                </li>
+                               
+                             
                                 <li class="last">
                                     <a href="logout">
                                         <i class="fa fa-lock"></i>
@@ -163,20 +140,15 @@
                             <ul class="sub-menu" style='display:block;'>
                             </ul>
                         </li>
+                       
                         <li class="">
-                            <a href="lab_test_view.html" class="list-group-item active">Medical Test</a>
-                            <ul class="sub-menu" >
-
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="doc_pationhistry?pationId=${patientinfo.patientId}" class="list-group-item active">Medical Test</a>
+                            <a href="doc_pationhistry?pationId=${patientinfo.patientId}" class="list-group-item active">Patient History </a>
                             <ul class="sub-menu" >
 
                             </ul>
                         </li>
                 </div>
-                <!-- MAIN MENU - END -->
+                
 
 
 
@@ -257,11 +229,6 @@
 
         </section>
 
-
-        <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
-
-
-        <!-- CORE JS FRAMEWORK - START --> 
         <script src="<c:url value="/assets/mod4/js/jquery-1.11.2.min.js"/>" type="text/javascript"></script> 
         <script src="<c:url value="/assets/mod4/js/jquery.easing.min.js"/>" type="text/javascript"></script> 
         <script src="<c:url value="/assets/mod4/js/bootstrap.min.js"/>" type="text/javascript"></script> 
@@ -281,33 +248,6 @@
 
 
 
-
-
-
-
-
-
-        <!-- General section box modal start -->
-        <div class="modal" id="section-settings" tabindex="-1" role="dialog" aria-labelledby="ultraModal-Label" aria-hidden="true">
-            <div class="modal-dialog animated bounceInDown">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Section Settings</h4>
-                    </div>
-                    <div class="modal-body">
-
-                        Body goes here...
-
-                    </div>
-                    <div class="modal-footer">
-                        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-                        <button class="btn btn-success" type="button">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- modal end -->
     </body>
 </html>
 
