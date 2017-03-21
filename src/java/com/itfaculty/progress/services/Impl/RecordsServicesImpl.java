@@ -50,4 +50,10 @@ public class RecordsServicesImpl implements RecordsServices {
         return recordsDao.GetRecordsById(recordsId);
     }
 
+    @Transactional
+    @Override
+    public List<Records> GetRecordsByPationId(int pationId) {
+        return recordsDao.GetRecordsByPationId(pationId);
+    }
+
 }

@@ -169,6 +169,12 @@
 
                             </ul>
                         </li>
+                        <li class="">
+                            <a href="doc_pationhistry?pationId=${patientinfo.patientId}" class="list-group-item active">Medical Test</a>
+                            <ul class="sub-menu" >
+
+                            </ul>
+                        </li>
                 </div>
                 <!-- MAIN MENU - END -->
 

@@ -68,4 +68,10 @@ public class DoctorController {
         return "redirect:" + "doc_pationprof?patId=" + 3;
     }
 
+    @RequestMapping(value = {"/doc_pationhistry"}, method = RequestMethod.GET)
+    public String LoaPationHistryDoctorPatientProfPage(ModelMap map, int pationId) {
+        System.out.println("****" + pationId);
+        return "doc_pationhistry";
+    }
+
 }

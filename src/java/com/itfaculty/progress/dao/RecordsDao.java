@@ -16,8 +16,10 @@ public interface RecordsDao {
     public List<Records> GetAllRecords();
 
     public void addRecords(Records records);
-    
+
     public void UpdateRecords(Records record);
-    
-     public Records GetRecordsById(int recordsId);
+
+    public Records GetRecordsById(int recordsId);
+
+    public List<Records> GetRecordsByPationId(int pationId);
 }

@@ -11,6 +11,8 @@ import com.itfaculty.progress.model.Records;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -50,6 +52,15 @@ public class RecordsDaoImpl implements RecordsDao {
         Criteria cr = sessionFactory.getCurrentSession().createCriteria(Records.class);
         cr.add(Restrictions.eq("recordId", recordsId));
         Records result = (Records) cr.uniqueResult();
+        return result;
+    }
+
+    @Override
+    public List<Records> GetRecordsByPationId(int pationId) {
+        Criteria cr = sessionFactory.getCurrentSession().createCriteria(Records.class);
+        Criterion catagarylist = Restrictions.ilike("patients.patientId", pationId + "%", MatchMode.ANYWHERE);
+        cr.add(catagarylist);
+        List<Records> result = cr.list();
         return result;
     }
 

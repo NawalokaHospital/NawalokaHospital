@@ -16,8 +16,10 @@ public interface RecordsServices {
     public List<Records> GetAllRecords();
 
     public void addRecords(Records records);
-    
+
     public void UpdateRecords(Records record);
-    
+
     public Records GetRecordsById(int recordsId);
+
+    public List<Records> GetRecordsByPationId(int pationId);
 }

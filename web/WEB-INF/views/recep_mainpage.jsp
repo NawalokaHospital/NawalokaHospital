@@ -370,7 +370,7 @@
                             } else {
                                 $('#tdatapatient').html("<tr>");
                                 $('#tdatapatient').append("<th colspan='3' style='color:red;text-align:center'>No Existing patient</th>");
-                                $('#tdatapatient').append("<th><input value='Add' type='button' class='btn-primary'/></th>");
+                                $('#tdatapatient').append("<th><form action='recep_addpation'><input value='Add' type='submit' class='btn-primary'/></form></th>");
                                 $('#tdatapatient').append("</tr>");
                             }
                         },
