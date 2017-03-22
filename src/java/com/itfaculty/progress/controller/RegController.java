@@ -80,6 +80,12 @@ public class RegController {
             lab.setLabassistantLastname(regObj.getLastname());
             lab.setLabassistantUsername(regObj.getUsername());
             lab.setLabassistantPassword(regObj.getPassword());
+            DateFormat formatter = new SimpleDateFormat("HH:mm");
+            Date dateend = formatter.parse(regObj.getEndDate());
+            Date dats = formatter.parse(regObj.getSdate());
+            lab.setLabassistantStime(dats);
+            lab.setLabassistantEtime(dateend);
+            lab.setLabassistantType(regObj.getTypeforreg());
             LabassistantsServices.addLabassistants(lab);
             map.addAttribute("logdata", logdata);
             return "redirect:" + "login";
