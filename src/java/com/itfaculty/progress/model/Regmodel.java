@@ -5,9 +5,7 @@
  */
 package com.itfaculty.progress.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.Date;
 
 public class Regmodel {
 
@@ -18,6 +16,10 @@ public class Regmodel {
     private String mobileno;
     private String setuserrole;
     private String[] userrole = {"Doctor", "Lab Assistant", "Reception"};
+
+    private String typeforreg;
+    private String sdate;
+    private String endDate;
 
     /**
      * @return the firstname
@@ -115,6 +117,48 @@ public class Regmodel {
      */
     public void setSetuserrole(String setuserrole) {
         this.setuserrole = setuserrole;
+    }
+
+    /**
+     * @return the typeforreg
+     */
+    public String getTypeforreg() {
+        return typeforreg;
+    }
+
+    /**
+     * @param typeforreg the typeforreg to set
+     */
+    public void setTypeforreg(String typeforreg) {
+        this.typeforreg = typeforreg;
+    }
+
+    /**
+     * @return the sdate
+     */
+    public String getSdate() {
+        return sdate;
+    }
+
+    /**
+     * @param sdate the sdate to set
+     */
+    public void setSdate(String sdate) {
+        this.sdate = sdate;
+    }
+
+    /**
+     * @return the endDate
+     */
+    public String getEndDate() {
+        return endDate;
+    }
+
+    /**
+     * @param endDate the endDate to set
+     */
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
 }

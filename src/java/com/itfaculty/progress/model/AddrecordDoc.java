@@ -14,6 +14,8 @@ public class AddrecordDoc {
     private String discription;
     private String[] testtype = {"One", "Two", "Three"};
 
+
+
     /**
      * @return the recordId
      */
@@ -97,5 +99,4 @@ public class AddrecordDoc {
     public void setPatId(int patId) {
         this.patId = patId;
     }
-
 }

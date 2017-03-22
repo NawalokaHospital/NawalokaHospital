@@ -13,37 +13,40 @@ import com.itfaculty.progress.model.login;
 import com.itfaculty.progress.services.DoctorsServices;
 import com.itfaculty.progress.services.LabassistantsServices;
 import com.itfaculty.progress.services.ReceptionistsServices;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 @Controller
 @RequestMapping("/")
 public class RegController {
-    
+
     @Autowired
     public DoctorsServices doctorsServices;
-    
+
     @Autowired
     public ReceptionistsServices ReceptionistsServices;
-    
+
     @Autowired
     public LabassistantsServices LabassistantsServices;
-    
+
     @RequestMapping(value = {"/reg_page"}, method = RequestMethod.GET)
     public String LoadRegPage(ModelMap map) {
         Regmodel regmod = new Regmodel();
         map.addAttribute("regObj", regmod);
         return "reg_page";
     }
-    
+
     @RequestMapping(value = {"/reg_page"}, method = RequestMethod.POST)
-    public String SaveRegPage(login logdata, Regmodel regObj, ModelMap map) {
+    public String SaveRegPage(login logdata, Regmodel regObj, ModelMap map) throws ParseException {
         map.addAttribute("regObj", regObj);
-        
+
         if (regObj.getSetuserrole().equals("Doctor") == true) {
             Doctors dc = new Doctors();
             dc.setDoctorFirstname(regObj.getFirstname());
@@ -51,10 +54,12 @@ public class RegController {
             dc.setDoctorUsername(regObj.getUsername());
             dc.setDoctorPassword(regObj.getPassword());
             dc.setDoctorTelno(regObj.getMobileno());
-            dc.setDoctorEtime(null);
-            dc.setDoctorType(null);
-            dc.setDoctorStime(null);
-            dc.setDoctorType(null);
+            DateFormat formatter = new SimpleDateFormat("HH:mm");
+            Date dateend = formatter.parse(regObj.getEndDate());
+            Date dats = formatter.parse(regObj.getSdate());
+            dc.setDoctorEtime(dateend);
+            dc.setDoctorType(regObj.getTypeforreg());
+            dc.setDoctorStime(dats);
             doctorsServices.addDoctors(dc);
             map.addAttribute("logdata", logdata);
             return "redirect:" + "login";

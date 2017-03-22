@@ -75,8 +75,8 @@
                             <form:input type="password" path="password" id="password" class="input" required="true"/>
                             <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
                     </p>
-                    
-                      <p>
+
+                    <p>
                         <label for="user_login">Conform Password<br />                           
                             <input type="password"  id="conpassword" class="input" value="" /></label>
                     </p>
@@ -84,6 +84,24 @@
                     <p>
                         <label for="user_login">T No:<br />
                             <form:input path="mobileno" id="mobileno" required="true"/>
+                            <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
+                    </p>
+
+                    <p>
+                        <label for="user_login">Type:<br />
+                            <form:input path="typeforreg" id="typeforreg" class="input"  required="true"/>
+                            <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
+                    </p>
+
+                    <p>
+                        <label for="user_login">Start Time:<br />
+                            <form:input path="sdate" id="sdate" type="time" class="input" required="true"/>
+                            <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
+                    </p>
+
+                    <p>
+                        <label for="user_login">End Time:<br />
+                            <form:input path="endDate" id="endDate" type="time" class="input" required="true"/>
                             <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
                     </p>
 
@@ -108,24 +126,24 @@
 
             </div>
         </div>
-                
-                 <script>
-                    $(document).ready(function () {
-                        $('#wp-submit').attr("disabled", "disabled");
-                    });
-                    $("#conpassword").keyup(function () {
-                        var pass = $('#password').val();
-                        var passconf = $('#conpassword').val();
-                        if (pass === passconf) {
-                            $('#wp-submit').attr("disabled", false);
-                        }
-                    });
+
+        <script>
+            $(document).ready(function () {
+                $('#wp-submit').attr("disabled", "disabled");
+            });
+            $("#conpassword").keyup(function () {
+                var pass = $('#password').val();
+                var passconf = $('#conpassword').val();
+                if (pass === passconf) {
+                    $('#wp-submit').attr("disabled", false);
+                }
+            });
         </script>
 
         <!-- CORE JS FRAMEWORK - START --> 
         <script src="<c:url value="/assets/mod1/js/jquery-1.11.2.min.js"/>" type="text/javascript"></script>
-        
-        
+
+
         <script src="<c:url value="/assets/mod1/js/jquery.easing.min.js"/>" type="text/javascript"></script> 
         <script src="<c:url value="/assets/mod1/js/bootstrap.min.js"/>" type="text/javascript"></script> 
         <script src="<c:url value="/assets/mod1/js/pace.min.js"/>" type="text/javascript"></script>  
