@@ -12,7 +12,7 @@
 <html>
     <head>
 
-      
+
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="shortcuticon" href="<c:url value="/assets/mod4/images/favicon.png"/>" type="image/x-icon" />    <!-- Favicon -->
@@ -184,21 +184,17 @@
                                 <h2>Patient History</h2> <br>
                                 <table>
                                     <tr>
-                                      
-                                        <th>Prescription</th>
-                                        <th>Name of Medicine</th>
-                                        <th>Physician</th>   
+                                        <th>Type</th>
+                                        <th>Condition</th> 
                                         <th>Test Report</th> 
-                                          <th>Condition</th> 
+                                        <th>Prescription</th>                                                                                                                           
                                     </tr>
 
                                     <tr>
-                                       
-                                        <td>${patirec. recordResultPrescription}</td>
-                                        <td>${patirec.recordNameofmedicine}</td>
-                                        <td>${patirec.recordPhysician}</td>
-                                        <td>${patirec.recordImage}</td>
-                                        <td>${patirec.recordCondition}</td>
+                                        <td>${patirec.recordFrequency}</td>
+                                        <td>${patirec.recordCondition}</td>                                                                         
+                                        <td><img width="100px;" src="<c:url value="/assets/uplodeimade/${patirec.recordImage}"/>"/></td>
+                                        <td>${patirec.recordResultPrescription}</td>
                                     </tr>
 
                                 </table>

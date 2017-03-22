@@ -168,7 +168,7 @@
                     <div class="page-title">
 
                         <div class="pull-left">
-                            <h1 class="title">Labassistant main page</h1>                 
+                            <h1 class="title">Doctor main page</h1>                 
                         </div>  
                         <div class="pull-right">
                             <ul>
@@ -224,7 +224,7 @@
                                         </c:when>
                                         <c:otherwise>
                                             Test Image:<br>
-                                            <img src="<c:url value="/assets/uplodeimade/${patirec.recordImage}"/>"><br><br>
+                                            <img width="150px" src="<c:url value="/assets/uplodeimade/${patirec.recordImage}"/>"><br><br>
 
                                             Description:<br>
                                             <c:choose>

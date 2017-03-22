@@ -12,9 +12,7 @@ public class AddrecordDoc {
     private String type;
     private String discriptiontype;
     private String discription;
-    private String[] testtype = {"One", "Two", "Three"};
-
-
+    private String[] testtype = {"Blood", "Urine", "Biopsy", "Endoscopy"};
 
     /**
      * @return the recordId

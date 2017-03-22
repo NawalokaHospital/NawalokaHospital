@@ -176,51 +176,51 @@
                             <form:form method="POST" modelAttribute="pation">    
 
                                 <p>
-                                    <label for="user_login"/>First Name: 
-                                    <form:input path="patientFirstname" class="input"/>
+                                    <label for="user_login"/>First Name: <br/>
+                                    <form:input path="patientFirstname" class="input" required="true"/>
                                     <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
                                 </p>
 
                                 <p>
-                                    <label for="user_login"/>Last Name:
-                                    <form:input path="patientLastname" class="input"/>
+                                    <label for="user_login"/>Last Name:<br/>
+                                    <form:input path="patientLastname" class="input" required="true"/>
                                     <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
                                 </p>
                                 <p>
-                                    <label for="user_login">NIC NO:&nbsp;&nbsp;
-                                        <form:input path="patientNicid" class="input"/>
+                                    <label for="user_login">NIC NO:<br/>
+                                        <form:input path="patientNicid" class="input" required="true"/>
                                         <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
                                 </p>
                                 <p>
-                                    <label for="user_login">UserName:
-                                        <form:input path="patientUname" class="input"/>
-                                        <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
-                                </p>
-
-                                <p>
-                                    <label for="user_login">Password:
-                                        <form:input type="password" path="patientPassword" class="input"/>
+                                    <label for="user_login">UserName:<br/>
+                                        <form:input path="patientUname" class="input" required="true"/>
                                         <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
                                 </p>
 
                                 <p>
-                                    <label for="user_login">Gender:
-                                        <form:input path="patientGender" class="input"/>
+                                    <label for="user_login">Password:<br/>
+                                        <form:input type="password" path="patientPassword" class="input" required="true"/>
+                                        <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
+                                </p>
+
+                                <p>
+                                    <label for="user_login">Gender:<br/>
+                                        <form:input path="patientGender" class="input" required="true"/>
                                         <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
                                 </p>
                                 <p>
-                                    <label for="user_login">Age:
-                                        <form:input path="patientAge" type="number" class="input"/>
+                                    <label for="user_login">Age:<br/>
+                                        <form:input path="patientAge" type="number" class="input" required="true"/>
                                         <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
                                 </p>
                                 <p>
-                                    <label for="user_login">T:no:
-                                        <form:input path="patientTelno" type="number" class="input"/>
+                                    <label for="user_login">T:no:<br/>
+                                        <form:input path="patientTelno" type="number" class="input" required="true"/>
                                         <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
                                 </p>
                                 <p>
-                                    <label for="user_login">Address:
-                                        <form:input path="patientAddress" class="input"/>
+                                    <label for="user_login">Address:<br/>
+                                        <form:input path="patientAddress" class="input" required="true"/>
                                         <!--<input type="text" name="log" id="user_login" class="input" value="" size="20" /></label>-->
                                 </p>
                                 <p class="submit">

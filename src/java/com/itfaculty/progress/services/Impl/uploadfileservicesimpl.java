@@ -28,7 +28,7 @@ public class uploadfileservicesimpl implements uploadfileservices {
         try {
             System.out.println("****" + file.getName());
             System.out.println("******" + Arrays.toString(file.getBytes()));
-             FileCopyUtils.copy(file.getBytes(),new File("C:/upload/"+file.getOriginalFilename()));
+             FileCopyUtils.copy(file.getBytes(),new File("C:\\xampp\\tomcat\\webapps\\NawalokaHospital\\WEB-INF\\assets\\uplodeimade\\"+file.getOriginalFilename()));
             return true;
         } catch (IOException ex) {
             return false;

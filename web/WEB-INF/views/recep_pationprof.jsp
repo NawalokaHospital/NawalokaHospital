@@ -77,28 +77,13 @@
                     <ul class="info-menu right-links list-inline list-unstyled">
                         <li class="profile">
                             <a href="#" data-toggle="dropdown" class="toggle">
-                                <img src="<c:url value="/assets/mod1/images/avatar-1.png"/>" alt="user-image" class="img-circle img-inline">
+                                <img src="<c:url value="/assets/mod4/images/rec.png"/>" alt="user-image" class="img-circle img-inline">
                                 <span style="color: black">UserName : <%=val%> <i class="fa fa-angle-down"></i></span>
                             </a>
                             <ul class="dropdown-menu profile animated fadeIn">
-                                <li>
-                                    <a href="#settings">
-                                        <i class="fa fa-wrench"></i>
-                                        Settings
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#profile">
-                                        <i class="fa fa-user"></i>
-                                        Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#help">
-                                        <i class="fa fa-info"></i>
-                                        Help
-                                    </a>
-                                </li>
+                            
+                             
+                                
                                 <li class="last">
                                     <a href="logout">
                                         <i class="fa fa-lock"></i>
@@ -128,7 +113,7 @@
 
                         <div class="profile-image col-md-4 col-sm-4 col-xs-4">
                             <a href="ui-profile.html">
-                                <img src="https://cdn2.iconfinder.com/data/icons/medicine-9/512/hospital-512.png" class="img-responsive img-circle" style="background-color: white">
+                                <img src="assets/mod4/images/naw.png" class="img-responsive img-circle" style="background-color: white">
                             </a>
                         </div>
 
@@ -162,19 +147,12 @@
                             <ul class="sub-menu" style='display:block;'>
                             </ul>
                         </li>
-                        <li class="open">
-                            <a href="javascript:;">
-
-                                <span class="title">Add Patient Records</span>
-                                <span class="arrow "></span>
-                            </a>
-
-                        </li>
+                      
 
                         <li class="">
                             <a href="recep_addpation">
 
-                                <span class="title">Patient Profile</span>
+                                <span class="title">Register Patient</span>
                                 <span class="arrow "></span>
                             </a>
                             <ul class="sub-menu" >
@@ -183,38 +161,12 @@
                         </li>
 
 
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">Add New User</span>
-                                <span class="arrow "></span>
-                            </a>
-
-                        </li>
-
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">User Information</span>
-                                <span class="arrow "></span>
-                            </a>
-
-                        </li>
+                  
 
 
 
-                        <li class="">
-                            <a href="javascript:;">
-
-                                <span class="title">Upload Report</span>
-                                <span class="arrow "></span>
-                            </a>
-                            <ul class="sub-menu" >
-
-
-                            </ul>
-                        </li>
-                </div>
+                     
+                                 </div>
                 <!-- MAIN MENU - END -->
 
 
@@ -268,7 +220,7 @@
                             <div class="col-md-12">
                                 <div class="col-xs-12 col-md-4" style="float: left;text-align: center">
                                     <h2>Add Patient Records</h2><br>      
-                                    First Name: <input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientFirstname}'/><br><br>
+                                    First Name: <input style="text-align: center" disabled="disabled" required="true" type="text" value='${pdata.patientFirstname}'/><br><br>
                                     Last Name: <input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientLastname}'/><br><br>
                                     NIC no: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientNicid}'/><br><br>
                                     Gender: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center" disabled="disabled" type="text" value='${pdata.patientGender}'/><br><br>
